@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/08 14:08:27 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/08 14:10:37 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ clean:
 	rm -f $(NAME)
 
 fclean: clean
-	rm -f $(NAME)
 
 re: fclean all
 
