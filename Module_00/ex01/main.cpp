@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/11 16:36:16 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/11 18:05:07 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 {
 	PhoneBook	book;
 	std::string command;
-	int			index;
+	int			index(-1);
 
 	std::cout << "Welcome to your phonebook !" << std::endl;
     while (true) 
@@ -32,14 +32,14 @@ int main(void)
 			book.printContactList();
 			std::cout << "Please enter contact index to display full information: ";
 			std::cin >> index;
-        	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			if (!std::cin.good() || index < 0 || index > 7)
 			{	
 				std::cin.clear();
 				std::cout << "Sorry, this contact does not exist" << std::endl;
 			}
-			else	
+			else
 				book.displayContactInfo(index);
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		else if (!command.compare("EXIT"))
             break;
