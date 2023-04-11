@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/11 12:11:31 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/11 13:51:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ public:
 	~Contact();
 	void fillContact();
 	void setIndex(int i);
-	void printContact(int index) const;
+	void printContactLine(int index) const;
+	void printContactFull(int index) const;
 
 private:
 	std::string _firstName;

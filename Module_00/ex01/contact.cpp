@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/11 12:10:16 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/11 15:25:12 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,25 @@ void    Contact::setIndex(int i)
     this->_index = i;
 }
 
-void Contact::printContact(int index) const
+void Contact::printContactLine(int index) const
 {
 	std::cout << "|" << std::setw(10) << index;
 	std::cout << "|" << std::setw(10) << _truncStr(this->_firstName);
 	std::cout << "|" << std::setw(10) << _truncStr(this->_lastName);
 	std::cout << "|" << std::setw(10) << _truncStr(this->_nickname);
 	std::cout << "|" << std::endl;
+}
+
+void Contact::printContactFull(int index) const
+{
+	std::cout << std::endl;
+	std::cout << "Contact index:\t" << index << std::endl;
+    std::cout << "First Name:\t" << this->_firstName << std::endl;
+    std::cout << "Last Name:\t" << this->_lastName << std::endl;
+    std::cout << "Nickname:\t" << this->_nickname << std::endl;
+    std::cout << "Phone number:\t" << this->_phoneNumber << std::endl;
+    std::cout << "Darkest Secret:\t" << this->_darkestSecret << std::endl;
+    std::cout << std::endl;
 }
 
 void Contact::fillContact() 
