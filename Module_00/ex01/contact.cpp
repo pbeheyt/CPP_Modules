@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/10 23:21:38 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/11 12:10:16 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Contact::Contact() {}
 
 Contact::~Contact() {}
 
-std::string Contact::_getInput(std::string msg)
+std::string Contact::_getInput(std::string msg) const
 {
 	std::string input;
 	
@@ -37,13 +37,11 @@ std::string Contact::_getInput(std::string msg)
 	return input;
 }
 
-void _printContent(std::string content)
+std::string Contact::_truncStr(std::string str) const
 {
-	std::cout << "|" << std::setw(10);
-	if (content.length() > 10)
-		std::cout << content.substr(0, 9) << ".";
-	else
-		std::cout << content;
+	if (str.length() > 10)
+		return str.substr(0, 9) + ".";
+	return str;
 }
 
 void    Contact::setIndex(int i) 
@@ -51,12 +49,12 @@ void    Contact::setIndex(int i)
     this->_index = i;
 }
 
-void Contact::printContact(int index) const 
+void Contact::printContact(int index) const
 {
-	std::cout << "|" << std::setw(10) << index << "|";
-	_printContent(this->_firstName);
-	_printContent(this->_lastName);
-	_printContent(this->_nickname);
+	std::cout << "|" << std::setw(10) << index;
+	std::cout << "|" << std::setw(10) << _truncStr(this->_firstName);
+	std::cout << "|" << std::setw(10) << _truncStr(this->_lastName);
+	std::cout << "|" << std::setw(10) << _truncStr(this->_nickname);
 	std::cout << "|" << std::endl;
 }
 

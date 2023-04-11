@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/10 22:57:24 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/11 11:24:02 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
         }
 		else if (command.compare("SEARCH") == 0)
 		{
-			book.printContacts();
+			book.printContactList();
         }
 		else if (command.compare("EXIT") == 0)
             break;
