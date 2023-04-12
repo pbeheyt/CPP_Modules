@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:06:43 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/12 18:28:13 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/12 19:10:14 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,24 +88,28 @@ void	Account::makeDeposit( int deposit ) {
 	_totalAmount += deposit;
 	this->_displayTimestamp();
 	std::cout	<< "index:" << _accountIndex << ";"
-                << "p_amount:" << _amount << ";" << std::flush;
-    std::cout << "deposit:" << deposit << ";"
+                << "p_amount:" << _amount << ";"
+    			<< "deposit:" << deposit << ";"
                 << "amount:" << _amount << ";"
                 << "nb_deposit:" << _nbDeposits << std::endl;
 }   
 
 bool	Account::makeWithdrawal( int withdrawal ) {
 
-	_nbDeposits++;
-	_totalNbDeposits++;
-    _amount -= withdrawal;
-	_totalAmount -= withdrawal;
 	this->_displayTimestamp();
 	std::cout	<< "index:" << _accountIndex << ";"
-                << "p_amount:" << _amount << ";" << std::flush;
-    std::cout << "deposit:" << withdrawal << ";"
+				<< "p_amount:" << _amount << ";" << std::flush;
+	if (_amount - withdrawal < 0) {
+	std::cout	<< "withdrawal:" << "refused" << std::endl;
+		return false;
+	}
+	_nbWithdrawals++;
+	_totalNbWithdrawals++;
+	_amount -= withdrawal;
+	_totalAmount -= withdrawal;
+    std::cout	<< "withdrawal:" << withdrawal << ";"
                 << "amount:" << _amount << ";"
-                << "nb_deposit:" << _nbDeposits << std::endl;
+                << "nb_withdrawals:" << _nbWithdrawals << std::endl;
 	return true;
 }
 
