@@ -6,27 +6,26 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:47:05 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/13 23:09:57 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/18 01:21:24 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef MODULE_01_EX06_HARL_HPP_
+#define MODULE_01_EX06_HARL_HPP_
 
 #include <iostream>
 
-class Harl
-{
+class Harl {
 	public:
 		Harl();
 		~Harl();
-		void complain( std::string level );
-	
+		void complain(std::string level);
+
 	private:
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void) ;
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
 };
 
-#endif
+#endif  // MODULE_01_EX06_HARL_HPP_

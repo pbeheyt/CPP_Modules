@@ -6,15 +6,15 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:10:55 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/13 22:38:58 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/18 01:03:11 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-std::string convert(const std::string& line, const std::string& s1, const std::string& s2)
-{
+std::string convert(const std::string& line, const std::string& s1,
+const std::string& s2) {
     std::string convLine;
     size_t i = 0;
     int len1 = s1.length();
@@ -31,10 +31,9 @@ std::string convert(const std::string& line, const std::string& s1, const std::s
     return convLine;
 }
 
-int	main(int ac, char **av)
-{
+int	main(int ac, char **av) {
 	std::string	line;
-	
+
 	if (ac != 4)
 		return (std::cout << "Error\nInvalid number of arguments" << std::endl, -1);
 	std::string file = av[1];

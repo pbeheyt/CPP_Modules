@@ -6,18 +6,17 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 23:06:31 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/13 23:43:08 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/18 01:21:56 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(int ac, char **av)
-{
+int main(int ac, char **av) {
 	Harl harl;
 
 	if (ac == 2)
 		harl.complain(av[1]);
-		
-	return (0);
+
+	return 0;
 }
