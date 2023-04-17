@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/08 14:10:37 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/17 22:39:04 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,24 @@ CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= megaphone.cpp
 
+OBJS	= $(SRCS:%.cpp=obj/%.o)
+
 all: $(NAME)
 
-$(NAME): 
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): obj $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+obj/%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+obj:
+	mkdir -p obj
 
 clean:
-	rm -f $(NAME)
+	rm -rf obj
 
 fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
 

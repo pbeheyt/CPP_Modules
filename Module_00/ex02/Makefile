@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/12 16:43:09 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/17 22:39:15 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ CFLAGS 	= -Wall -Wextra -Werror -std=c++98 -g
 SRCS	= tests.cpp \
 		Account.cpp
 
-OBJS	= $(addprefix obj/, $(SRCS:.cpp=.o))
+OBJS	= $(SRCS:%.cpp=obj/%.o)
 
-all: obj $(NAME)
+all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): obj $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-obj/%.o: %.cpp $(wildcard %.hpp)
+obj/%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 obj:
@@ -40,5 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all obj clean fclean re
-
+.PHONY: all clean fclean re
