@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/17 23:37:36 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/18 23:38:03 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ std::string Contact::_truncStr(std::string str) const {
 	return str;
 }
 
-void Contact::setIndex(int i) {
-	this->_index = i;
+void Contact::setIndex(int index) {
+	this->_index = index;
 }
 
 void Contact::printContactLine(int index) const {
