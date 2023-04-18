@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 23:18:39 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/18 23:33:32 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ PhoneBook::PhoneBook() {
 PhoneBook::~PhoneBook() {}
 
 void PhoneBook::addContact() {
-	if (this->_nbContacts == 8)
+	if (this->_nbContacts > 7) {
 		this->_nbContacts = 0;
+	}
 	this->_contacts[this->_nbContacts].fillContact();
 	this->_contacts[this->_nbContacts].setIndex(this->_nbContacts);
 	this->_nbContacts++;
