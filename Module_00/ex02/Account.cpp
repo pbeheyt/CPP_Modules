@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:06:43 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 00:05:52 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/21 22:16:13 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ void	Account::_displayTimestamp(void)  {
 }
 
 Account::Account(int initial_deposit) {
-	_accountIndex = ++_nbAccounts;
+	_accountIndex = _nbAccounts++;
 	_amount = initial_deposit;
+	_totalAmount += initial_deposit;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
 	this->_displayTimestamp();
