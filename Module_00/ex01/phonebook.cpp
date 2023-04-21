@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 23:33:32 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 00:07:48 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PhoneBook::PhoneBook() {
 
 PhoneBook::~PhoneBook() {}
 
-void PhoneBook::addContact() {
+void PhoneBook::addContact(void) {
 	if (this->_nbContacts > 7) {
 		this->_nbContacts = 0;
 	}
@@ -29,12 +29,13 @@ void PhoneBook::addContact() {
 	this->_nbContacts++;
 }
 
-void PhoneBook::printContactList() const {
+void PhoneBook::printContactList(void) const {
 	std::cout << std::endl;
 	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 8; i++) {
 		this->_contacts[i].printContactLine(i);
+	}
 	std::cout << std::endl;
 }
 

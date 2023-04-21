@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/21 22:09:26 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/21 23:39:05 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void Contact::printContactFull(int index) const {
 	std::cout << std::endl;
 }
 
-void Contact::fillContact() {
+void Contact::fillContact(void) {
 	this->_firstName = this->_getInput("Please enter your first name: ");
 	this->_lastName = this->_getInput("Please enter your last name: ");
 	this->_nickname = this->_getInput("Please enter your nickname: ");

@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/17 23:50:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/21 23:42:21 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include "phonebook.hpp"
 
 int main(void) {
-	PhoneBook book;
-	std::string command;
-	int index = -1;
+	PhoneBook	book;
+	std::string	command;
+	int			index = -1;
 
 	std::cout << "Welcome to your phonebook !" << std::endl;
 	while (true) {
