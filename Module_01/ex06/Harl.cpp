@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:49:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 04:56:47 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 05:08:01 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void Harl::error(void)
 void Harl::complain(std::string level)
 {
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int index = 4;
+	int index = -1;
 	for (int i = 0; i < 4; i++)
 	{
 		if (!level.compare(levels[i])) {
