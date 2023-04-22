@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:47:05 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 02:28:55 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:03:58 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Harl {
 	public:
-		Harl();
-		~Harl();
+		Harl(void);
+		~Harl(void);
 		
 		void	complain(std::string level);
 

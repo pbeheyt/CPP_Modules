@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 01:34:25 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:02:41 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class PhoneBook {
 	public:
-		PhoneBook();
-		~PhoneBook();
+		PhoneBook(void);
+		~PhoneBook(void);
 		
 		void	addContact(void);
 		void	displayContactInfo(int index) const;

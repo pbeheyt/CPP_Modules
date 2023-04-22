@@ -6,15 +6,15 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 21:20:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 02:30:53 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:03:03 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() {}
+Zombie::Zombie(void) {}
 
-Zombie::~Zombie() {
+Zombie::~Zombie(void) {
     std::cout << this->_name << " has been destroyed" << std::endl;
 }
 

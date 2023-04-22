@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:36:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 00:33:50 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:03:25 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 HumanB::HumanB(std::string name) :
 _name(name), _weapon(NULL) {}
 
-HumanB::~HumanB() {}
+HumanB::~HumanB(void) {}
 
 void	HumanB::attack(void) const {
 	std::cout	<< this->_name << " attacks with their "

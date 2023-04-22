@@ -6,15 +6,15 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:49:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/19 00:54:15 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:03:45 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl() {}
+Harl::Harl(void) {}
 
-Harl::~Harl() {}
+Harl::~Harl(void) {}
 
 void    Harl::debug(void) {
     std::cout	<< "love having extra bacon for my 7XL-double-cheese-triple"

@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 02:10:59 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:02:27 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <iostream>
 #include <iomanip>
 
-Contact::Contact() {}
+Contact::Contact(void) {}
 
-Contact::~Contact() {}
+Contact::~Contact(void) {}
 
 std::string Contact::_getInput(std::string msg) const {
 	std::string input;

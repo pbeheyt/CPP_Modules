@@ -6,15 +6,15 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:49:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 05:08:01 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:03:53 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl() {}
+Harl::Harl(void) {}
 
-Harl::~Harl() {}
+Harl::~Harl(void) {}
 
 void Harl::debug(void)
 {

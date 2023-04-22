@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:21:06 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 04:27:13 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 06:03:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Weapon {
 	public:
 		explicit Weapon(std::string type);
-		~Weapon();
+		~Weapon(void);
 		
 		std::string const&	getType(void);
 		void				setType(std::string type);
