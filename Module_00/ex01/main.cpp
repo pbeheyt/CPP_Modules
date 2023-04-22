@@ -6,13 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/21 23:42:21 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 02:08:44 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <limits>
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int main(void) {
 	PhoneBook	book;
@@ -21,7 +21,7 @@ int main(void) {
 
 	std::cout << "Welcome to your phonebook !" << std::endl;
 	while (true) {
-		std::cout << "Please enter command (ADD, SEARCH, or EXIT): ";
+		std::cout << "Please enter command (ADD, SEARCH, or EXIT): " ;
 		std::getline(std::cin, command);
 		if (!command.compare("ADD")) {
 			book.addContact();
