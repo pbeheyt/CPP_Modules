@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 21:20:27 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 00:26:47 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 02:30:45 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ class Zombie {
 	public:
 		Zombie();
 		~Zombie();
-		void    announce(void);
+		
+		void    announce(void) const;
 		Zombie* newZombie(std::string name);
 		void	setName(std::string name);
 

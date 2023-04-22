@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:02:17 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 01:00:31 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/22 02:27:48 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class HumanA {
 	public:
 		HumanA(std::string name, Weapon& weapon);
 		~HumanA();
+		
 		void	attack(void) const;
 
 	private:

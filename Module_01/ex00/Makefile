@@ -6,15 +6,15 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/17 22:39:24 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/22 05:03:11 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= zombie
+NAME	= Zombie
 
 CC 		= c++
 
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
 		Zombie.cpp \
