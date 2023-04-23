@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 01:42:06 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/23 02:50:37 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,15 @@ class Fixed {
 	Fixed	operator--(int);
 
 	static Fixed		&min(Fixed &a, Fixed &b);
-    static Fixed const	&min(Fixed const &a, Fixed const &b);
-    static Fixed		&max(Fixed &a, Fixed &b);
-    static Fixed const	&max(Fixed const &a, Fixed const &b);
+	static Fixed const	&min(Fixed const &a, Fixed const &b);
+	static Fixed		&max(Fixed &a, Fixed &b);
+	static Fixed const	&max(Fixed const &a, Fixed const &b);
 
 private:
 	int					_value;
 	static const int	_fractionalBits = 8;
 };
+
 
 std::ostream	&operator<<(std::ostream &ofs, Fixed const &rhs);
 

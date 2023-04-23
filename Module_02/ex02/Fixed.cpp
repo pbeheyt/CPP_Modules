@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 02:34:06 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/23 03:01:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 #include <cmath>
 
 Fixed::Fixed(void) : _value(0) {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int const n) {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     this->_value = n << this->_fractionalBits;
 }
 
 Fixed::Fixed(float const f) {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
     this->_value = (int)roundf(f * (1 << this->_fractionalBits));
 }
 
 Fixed::Fixed(Fixed const &copy) {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
     *this = copy;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 
 Fixed	&Fixed::operator=(Fixed const &rhs) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs) {
         this->_value = rhs.getRawBits();
     }
@@ -55,7 +55,7 @@ int	Fixed::toInt(void) const {
 }
 
 int	Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
 }
 
@@ -132,20 +132,20 @@ Fixed	Fixed::operator--(int) {
 }
 
 
-Fixed	&min(Fixed &a, Fixed &b) {
-	return (a.getRawBits() < b.getRawBits() ? a : b);
+Fixed	&Fixed::min(Fixed &a, Fixed &b) {
+	return (a < b ? a : b);
 }
 
-Fixed const	&min(Fixed const &a, Fixed const &b) {
-    return (a.getRawBits() < b.getRawBits() ? a : b);
+Fixed const	&Fixed::min(Fixed const &a, Fixed const &b) {
+    return (a < b ? a : b);
 }
 
-Fixed	&max(Fixed &a, Fixed &b) {
-    return (a.getRawBits() > b.getRawBits() ? a : b);
+Fixed	&Fixed::max(Fixed &a, Fixed &b) {
+    return (a > b ? a : b);
 }
 
-Fixed const	&max(Fixed const &a, Fixed const &b) {
-    return (a.getRawBits() > b.getRawBits() ? a : b);
+Fixed const	&Fixed::max(Fixed const &a, Fixed const &b) {
+    return (a > b ? a : b);
 }
 
 
