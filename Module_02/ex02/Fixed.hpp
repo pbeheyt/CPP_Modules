@@ -6,12 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 04:28:34 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/23 04:47:02 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODULE_02_EX01_FIXED_H
-# define MODULE_02_EX01_FIXED_H
+#ifndef MODULE_02_EX02_FIXED_HPP_
+# define MODULE_02_EX02_FIXED_HPP_
 
 # include <iostream>
 
@@ -59,4 +59,4 @@ private:
 
 std::ostream	&operator<<(std::ostream &ofs, Fixed const &rhs);
 
-#endif  // MODULE_02_EX01_FIXED_H
+#endif  // MODULE_02_EX02_FIXED_HPP_

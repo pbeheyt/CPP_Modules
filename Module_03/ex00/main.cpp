@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 04:46:33 by pbeheyt          ###   ########.fr       */
+/*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
+/*   Updated: 2023/04/23 04:56:09 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODULE_02_EX00_FIXED_HPP_
-# define MODULE_02_EX00_FIXED_HPP_
+#include "ClapTrap.hpp"
 
-# include <iostream>
+int main() {
+    ClapTrap clap("Clap");
+    ClapTrap clap2("Clap2");
+    ClapTrap clap3(clap);
 
-class Fixed {
-	public:
-    Fixed(void);
-    Fixed(const Fixed& copy);
-    Fixed	&operator=(const Fixed& rhs);
-    ~Fixed(void);
+    clap.attack("enemy");
+    clap.takeDamage(5);
+    clap.beRepaired(3);
 
+    clap2.attack("enemy");
+    clap2.takeDamage(10);
+    clap2.beRepaired(2);
 
-    int		getRawBits(void) const;
-    void	setRawBits(int const raw);
+    clap3.attack("enemy");
+    clap3.takeDamage(2);
+    clap3.beRepaired(5);
 
-private:
-    int					_value;
-    static const int	_fractionalBits = 8;
-};
-
-#endif  // MODULE_02_EX00_FIXED_HPP_
+    return 0;
+}
