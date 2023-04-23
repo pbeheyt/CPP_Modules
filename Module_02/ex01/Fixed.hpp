@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 00:42:04 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/23 01:31:32 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Fixed {
 
     Fixed	&operator=(Fixed const &rhs);
 
-	float	toFloat(void) const;
-	int		toInt(void) const;
     int		getRawBits(void) const;
     void	setRawBits(int const raw);
+	float	toFloat(void) const;
+	int		toInt(void) const;
 
 private:
     int					_value;
