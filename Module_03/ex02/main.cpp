@@ -6,18 +6,19 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 05:27:55 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:09:22 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int main() {
+int main(void) {
     FragTrap frag("Sylvain");
     FragTrap frag2("Michel");
     FragTrap frag3(frag);
-    FragTrap frag4 = frag2;
+    FragTrap frag4;
+	frag4.operator=(frag2);
 	std::cout << std::endl;
 
     frag.attack("enemy");

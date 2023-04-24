@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 02:23:05 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:00:38 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ ScavTrap::ScavTrap(ScavTrap const &rhs) : ClapTrap(rhs) {
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs) {
-	ClapTrap::operator=(rhs);
-	std::cout << "ScavTrap " << _name << " has been reassigned!" << std::endl;
+	if (this != &rhs) {
+		ClapTrap::operator=(rhs);
+		std::cout << "ScavTrap " << _name << " has been reassigned!" << std::endl;
+	}
 	return *this;
 }
 

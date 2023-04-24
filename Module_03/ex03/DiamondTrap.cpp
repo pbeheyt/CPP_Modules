@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 05:10:51 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:05:10 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ DiamondTrap::DiamondTrap(DiamondTrap const &rhs) :
 }
 
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs) {
-	ClapTrap::operator=(rhs);
-	ScavTrap::operator=(rhs);
-	FragTrap::operator=(rhs);
-	std::cout << "DiamondTrap " << _name << " has been reassigned!" << std::endl;
+	if (this != &rhs) {
+		ClapTrap::operator=(rhs);
+		ScavTrap::operator=(rhs);
+		FragTrap::operator=(rhs);	
+		std::cout << "DiamondTrap " << _name << " has been reassigned!" << std::endl;
+	}		
 	return *this;
 }
 

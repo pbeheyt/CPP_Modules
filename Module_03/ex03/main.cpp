@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 05:20:58 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:09:27 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-int main() {
+int main(void) {
     DiamondTrap diam("Sylvain");
     DiamondTrap diam2("Michel");
     DiamondTrap diam3(diam);
-	DiamondTrap diam4 = diam2;
+	DiamondTrap diam4;
+	diam4.operator=(diam2);
 	std::cout << std::endl;
 
     diam.attack("enemy");

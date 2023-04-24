@@ -6,14 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:18 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 01:40:28 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 21:57:00 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
-
-#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) : 
 	_name("Unnamed"), 
@@ -31,20 +29,19 @@ ClapTrap::ClapTrap(std::string const &name) :
 	std::cout	<< "ClapTrap " << _name << " is alive!" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &rhs) : 
-	_name(rhs._name), 
-	_hitPoints(rhs._hitPoints), 
-	_energyPoints(rhs._energyPoints), 
-	_attackDamage(rhs._attackDamage) {
+ClapTrap::ClapTrap(ClapTrap const &rhs) {  
 	std::cout << "ClapTrap " << _name << " has been cloned!" << std::endl;
+	*this = rhs;
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
-	std::cout << "ClapTrap " << _name << " has been reassigned!" << std::endl;
-	_name = rhs._name;
-	_hitPoints = rhs._hitPoints;
-	_energyPoints = rhs._energyPoints;
-	_attackDamage = rhs._attackDamage;
+	if (this != &rhs) {
+		std::cout << "ClapTrap " << _name << " has been reassigned!" << std::endl;
+		_name = rhs._name;
+		_hitPoints = rhs._hitPoints;
+		_energyPoints = rhs._energyPoints;
+		_attackDamage = rhs._attackDamage;
+	}
 	return *this;
 }
 

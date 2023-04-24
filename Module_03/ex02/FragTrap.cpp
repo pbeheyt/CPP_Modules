@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 05:33:42 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:04:02 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ FragTrap::FragTrap(FragTrap const &rhs) : ClapTrap(rhs) {
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &rhs) {
-	ClapTrap::operator=(rhs);
-	std::cout << "FragTrap " << _name << " has been reassigned!" << std::endl;
+	if (this!= &rhs) {
+		ClapTrap::operator=(rhs);
+		std::cout << "FragTrap " << _name << " has been reassigned!" << std::endl;
+	}
 	return *this;
 }
 

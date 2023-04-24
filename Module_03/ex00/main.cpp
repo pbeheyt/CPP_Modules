@@ -6,13 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 21:52:29 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:09:33 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main() {
+int main(void) {
     ClapTrap clap("Clap");
     ClapTrap clap2("Clap2");
     ClapTrap clap3(clap);
