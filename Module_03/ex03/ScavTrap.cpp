@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 02:22:48 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 01:48:09 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,25 @@ ScavTrap::ScavTrap(void) : ClapTrap("Unnamed") {
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
-	std::cout	<< "ScavTrap " << _name << " is alive!" << std::endl;
+	std::cout << "ScavTrap " << _name << " is alive!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name) {
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
-	std::cout	<< "ScavTrap " << _name << " is alive!" << std::endl;
+	std::cout << "ScavTrap " << _name << " is alive!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &rhs) : ClapTrap(rhs) {
+	*this = rhs;
 	std::cout << "ScavTrap " << _name << " has been cloned!" << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs) {
-	ClapTrap::operator=(rhs);
-	std::cout << "ScavTrap " << _name << " has been reassigned!" << std::endl;
+	if (this != &rhs) {
+		ClapTrap::operator=(rhs);
+	}
 	return *this;
 }
 

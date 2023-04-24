@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 22:09:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 01:32:11 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 int main(void) {
     ScavTrap scav("Sylvain");
-    ScavTrap scav2("Michel");
-    ScavTrap scav3(scav);
+	std::cout << std::endl;
+    
+	ScavTrap scav2("Michel");
+	std::cout << std::endl;
+    
+	ScavTrap scav3(scav);
+	std::cout << std::endl;
+	
 	ScavTrap scav4;
 	scav4.operator=(scav2);
 	std::cout << std::endl;

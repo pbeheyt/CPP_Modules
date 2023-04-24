@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 22:04:02 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 01:49:36 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@ FragTrap::FragTrap(void) : ClapTrap("Unnamed") {
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
-	std::cout	<< "FragTrap " << _name << " is alive!" << std::endl;
+	std::cout << "FragTrap " << _name << " is alive!" << std::endl;
 }
 
 FragTrap::FragTrap(std::string const &name) : ClapTrap(name) {
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
-	std::cout	<< "FragTrap " << _name << " is alive!" << std::endl;
+	std::cout << "FragTrap " << _name << " is alive!" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &rhs) : ClapTrap(rhs) {
+	*this = rhs;
 	std::cout << "FragTrap " << _name << " has been cloned!" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &rhs) {
 	if (this!= &rhs) {
 		ClapTrap::operator=(rhs);
-		std::cout << "FragTrap " << _name << " has been reassigned!" << std::endl;
 	}
 	return *this;
 }

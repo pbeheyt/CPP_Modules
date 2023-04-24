@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:18 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 21:57:00 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 01:36:53 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,18 @@ ClapTrap::ClapTrap(std::string const &name) :
 }
 
 ClapTrap::ClapTrap(ClapTrap const &rhs) {  
-	std::cout << "ClapTrap " << _name << " has been cloned!" << std::endl;
 	*this = rhs;
+	std::cout << "ClapTrap " << _name << " has been cloned!" << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
 	if (this != &rhs) {
-		std::cout << "ClapTrap " << _name << " has been reassigned!" << std::endl;
 		_name = rhs._name;
 		_hitPoints = rhs._hitPoints;
 		_energyPoints = rhs._energyPoints;
 		_attackDamage = rhs._attackDamage;
+		std::cout	<< "Old ClapTrap has been reassigned to Claptrap " 
+					<< _name << "!" << std::endl;
 	}
 	return *this;
 }

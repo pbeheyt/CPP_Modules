@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 22:09:27 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 23:29:01 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@
 
 int main(void) {
     DiamondTrap diam("Sylvain");
-    DiamondTrap diam2("Michel");
-    DiamondTrap diam3(diam);
+	std::cout << std::endl;
+    
+	DiamondTrap diam2("Michel");
+	std::cout << std::endl;
+    
+	DiamondTrap diam3(diam);
+	std::cout << std::endl;
+	
 	DiamondTrap diam4;
 	diam4.operator=(diam2);
 	std::cout << std::endl;
