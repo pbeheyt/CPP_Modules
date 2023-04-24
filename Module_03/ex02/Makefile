@@ -6,11 +6,11 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/24 00:55:13 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/24 02:20:46 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ScavTrap
+NAME	= FragTrap
 
 CC 		= c++
 
@@ -18,7 +18,8 @@ CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
 		ClapTrap.cpp \
-		ScavTrap.cpp
+		ScavTrap.cpp \
+		FragTrap.cpp
 
 OBJS	= $(SRCS:%.cpp=obj/%.o)
 

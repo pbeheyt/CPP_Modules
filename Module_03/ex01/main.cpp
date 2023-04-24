@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 01:08:39 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 02:24:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,19 @@ int main() {
     scav.attack("enemy");
     scav.takeDamage(5);
     scav.beRepaired(3);
+	scav.guardGate();
 	std::cout << std::endl;
 
 	scav2.attack("enemy");
     scav2.takeDamage(10);
     scav2.beRepaired(2);
+	scav.guardGate();
 	std::cout << std::endl;
 
     scav3.attack("enemy");
     scav3.takeDamage(2);
     scav3.beRepaired(5);
+	scav.guardGate();
 	std::cout << std::endl;
 
     return 0;
