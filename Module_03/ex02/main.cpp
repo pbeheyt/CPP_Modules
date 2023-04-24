@@ -6,31 +6,31 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 01:08:51 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 01:08:39 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-    ClapTrap clap("Clap");
-    ClapTrap clap2("Clap2");
-    ClapTrap clap3(clap);
+    ScavTrap scav("Sylvain");
+    ScavTrap scav2("Michel");
+    ScavTrap scav3(scav);
 	std::cout << std::endl;
 
-    clap.attack("enemy");
-    clap.takeDamage(5);
-    clap.beRepaired(3);
+    scav.attack("enemy");
+    scav.takeDamage(5);
+    scav.beRepaired(3);
 	std::cout << std::endl;
 
-    clap2.attack("enemy");
-    clap2.takeDamage(10);
-    clap2.beRepaired(2);
+	scav2.attack("enemy");
+    scav2.takeDamage(10);
+    scav2.beRepaired(2);
 	std::cout << std::endl;
 
-    clap3.attack("enemy");
-    clap3.takeDamage(2);
-    clap3.beRepaired(5);
+    scav3.attack("enemy");
+    scav3.takeDamage(2);
+    scav3.beRepaired(5);
 	std::cout << std::endl;
 
     return 0;

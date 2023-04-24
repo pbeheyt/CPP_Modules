@@ -6,12 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:21 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 01:39:46 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 01:40:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODULE_03_EX00_CLAPTRAP_HPP_
-#define MODULE_03_EX00_CLAPTRAP_HPP_
+#ifndef MODULE_03_EX01_CLAPTRAP_HPP_
+#define MODULE_03_EX01_CLAPTRAP_HPP_
 
 #include <iostream>
 #include <string>
@@ -37,4 +37,4 @@ class ClapTrap {
 		void printStatus(void) const;
 };
 
-#endif  // MODULE_03_EX00_CLAPTRAP_HPP_
+#endif  // MODULE_03_EX01_CLAPTRAP_HPP_
