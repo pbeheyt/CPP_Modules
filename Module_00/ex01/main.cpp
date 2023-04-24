@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 02:08:44 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:39:37 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int main(void) {
 	while (true) {
 		std::cout << "Please enter command (ADD, SEARCH, or EXIT): " ;
 		std::getline(std::cin, command);
+		if (std::cin.eof()) {
+            std::cout << std::endl;
+            break;
+        }
 		if (!command.compare("ADD")) {
 			book.addContact();
 		} else if (!command.compare("SEARCH")) {

@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:27:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 06:02:27 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 23:16:13 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ std::string Contact::_getInput(std::string msg) const {
 	while (true) {
 		std::cout << msg << std::flush;
 		std::getline(std::cin, input);
+		if (std::cin.eof()) {
+            std::cout << std::endl;
+            break;
+        }
 		if (std::cin.good() && !input.empty()) {
 			return input;
 		} else {
