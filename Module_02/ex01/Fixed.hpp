@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 04:46:45 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/23 23:30:46 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@
 
 class Fixed {
 	public:
-    Fixed(void);
-	Fixed(int const n);
-	Fixed(float const f);
-    Fixed(Fixed const &copy);
-    Fixed	&operator=(Fixed const &rhs);
-    ~Fixed(void);
+		Fixed(void);
+		Fixed(int const n);
+		Fixed(float const f);
+		Fixed(Fixed const &copy);
+		Fixed	&operator=(Fixed const &rhs);
+		~Fixed(void);
 
-    int		getRawBits(void) const;
-    void	setRawBits(int const raw);
-	float	toFloat(void) const;
-	int		toInt(void) const;
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 
-private:
-    int					_value;
-    static const int	_fractionalBits = 8;
+	private:
+		int					_value;
+		static const int	_fractionalBits = 8;
 };
 
 std::ostream	&operator<<(std::ostream &ofs, Fixed const &rhs);
