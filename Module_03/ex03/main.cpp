@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 05:08:19 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 05:20:58 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main() {
     DiamondTrap diam("Sylvain");
     DiamondTrap diam2("Michel");
     DiamondTrap diam3(diam);
+	DiamondTrap diam4 = diam2;
 	std::cout << std::endl;
 
     diam.attack("enemy");
@@ -36,6 +37,12 @@ int main() {
     diam3.takeDamage(2);
     diam3.beRepaired(5);
     diam3.whoAmI();
+	std::cout << std::endl;
+
+	diam4.attack("enemy");
+    diam4.takeDamage(2);
+    diam4.beRepaired(5);
+    diam4.whoAmI();
 	std::cout << std::endl;
 
     return 0;
