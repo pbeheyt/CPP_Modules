@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 05:41:39 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/24 21:52:29 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ int main() {
     ClapTrap clap("Clap");
     ClapTrap clap2("Clap2");
     ClapTrap clap3(clap);
-    // ClapTrap clap4 = clap2;
 	ClapTrap clap4;
 	clap4.operator=(clap2);
-	
 	std::cout << std::endl;
 
     clap.attack("enemy");
