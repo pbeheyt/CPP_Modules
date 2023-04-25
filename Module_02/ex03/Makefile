@@ -6,11 +6,11 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/25 05:43:53 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/26 00:27:34 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= BSP
+NAME	= bsp
 
 CC 		= c++
 
@@ -18,7 +18,8 @@ CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
 		Fixed.cpp \
-		Point.cpp
+		Point.cpp \
+		# bsp.cpp
 
 OBJS	= $(SRCS:%.cpp=obj/%.o)
 

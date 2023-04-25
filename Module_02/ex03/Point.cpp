@@ -6,23 +6,23 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 05:21:54 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 06:22:22 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 00:30:12 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
 Point::Point(void) : _x(Fixed(0)), _y (Fixed(0)) {
-	std::cout << "[Point] - Default constructor called" << std::endl;
+	// std::cout << "[Point] - Default constructor called" << std::endl;
 }
 
 Point::Point(const float x, const float y) : _x(Fixed(x)), _y(Fixed(y)) {
-	std::cout << "[Point] - Float constructor called" << std::endl;
+	// std::cout << "[Point] - Float constructor called" << std::endl;
 }
 
 Point::Point(Point const &rhs) {
 	*this = rhs;
-	std::cout << "[Point] - Float constructor called" << std::endl;
+	// std::cout << "[Point] - Float constructor called" << std::endl;
 }
 
 Point	&Point::operator=(Point const &rhs) {
@@ -32,11 +32,19 @@ Point	&Point::operator=(Point const &rhs) {
         *ptrx = rhs._x;
         *ptry = rhs._y;
     }
-	std::cout << "[Point] - Copy assignment operator called" << std::endl;
+	// std::cout << "[Point] - Copy assignment operator called" << std::endl;
     return *this;
 }
 
 Point::~Point(void) {
-	std::cout << "[Point] - Destructor called" << std::endl;
+	// std::cout << "[Point] - Destructor called" << std::endl;
 }
 
+
+Fixed const	Point::getX(void) const {
+	return _x;
+}
+
+Fixed const	Point::getY(void) const {
+	return _y;
+}

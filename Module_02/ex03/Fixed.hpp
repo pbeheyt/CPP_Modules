@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 05:26:24 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 23:54:43 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,4 @@ class Fixed {
 
 std::ostream	&operator<<(std::ostream &ofs, Fixed const &rhs);
 
-#endif  // MODULE_02_EX02_FIXED_HPP_
+#endif  // MODULE_02_EX03_FIXED_HPP_

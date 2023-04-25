@@ -6,14 +6,14 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 05:21:57 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 05:48:19 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 00:27:59 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODULE_02_EX03_POINT_HPP_
 #define MODULE_02_EX03_POINT_HPP_
 
-#include "Fixed.cpp"
+#include "Fixed.hpp"
 
 class Point {
 	public:
@@ -22,12 +22,15 @@ class Point {
 		Point(Point const &rhs);
 		Point	&operator=(Point const &rhs);
 		~Point(void);
+
+		Fixed const	getX(void) const;
+		Fixed const	getY(void) const;
 	
 	private:
 		Fixed const _x;
 		Fixed const _y;
 };
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif // MODULE_02_EX03_POINT_HPP_

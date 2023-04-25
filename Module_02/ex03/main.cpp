@@ -6,59 +6,32 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:09:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 04:08:37 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 00:28:36 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
+#include "Point.hpp"
+#include "bsp.cpp"
 
 int main(void) {
-	Fixed a(42.42f);
-	Fixed b(21.21f);
+    Point a(0, 0);
+    Point b(0, 10);
+    Point c(10, 0);
+    Point inside(5, 5);
+    Point outside(20, 20);
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "a + b is " << a + b << std::endl;
-	std::cout << "a - b is " << a - b << std::endl;
-	std::cout << "a * b is " << a * b << std::endl;
-	std::cout << "a / b is " << a / b << std::endl;
-	std::cout << "a > b is " << (a > b) << std::endl;
-	std::cout << "a < b is " << (a < b) << std::endl;
-	std::cout << "a >= b is " << (a >= b) << std::endl;
-	std::cout << "a <= b is " << (a <= b) << std::endl;
-	std::cout << "a == b is " << (a == b) << std::endl;
-	std::cout << "a != b is " << (a != b) << std::endl;
+    if (bsp(a, b, c, inside)) {
+        std::cout << "Point is inside the triangle." << std::endl;
+    } else {
+        std::cout << "Point is outside the triangle." << std::endl;
+    }
 
-	Fixed c(a);
-	std::cout << "c is " << c << std::endl;
-	c.setRawBits(1234);
-	std::cout << "c is now " << c << std::endl;
+    if (bsp(a, b, c, outside)) {
+        std::cout << "Point is inside the triangle." << std::endl;
+    } else {
+        std::cout << "Point is outside the triangle." << std::endl;
+    }
 	
-	Fixed const d(123.456f);
-	std::cout << "d is " << d << std::endl;
-	std::cout << "d to int is " << d.toInt() << std::endl;
-	std::cout << "d to float is " << d.toFloat() << std::endl;
-
-	std::cout << "a++ is " << a++ << std::endl;
-	std::cout << "a is now " << a << std::endl;
-	std::cout << "++a is " << ++a << std::endl;
-	std::cout << "a is now " << a << std::endl;
-	std::cout << "c-- is " << c-- << std::endl;
-	std::cout << "c is now " << c << std::endl;
-	std::cout << "--c is " << --c << std::endl;
-	std::cout << "c is now " << c << std::endl;
-
-	std::cout	<< "a : " << a 
-				<< " | b : " << b 
-				<< " | c : " << c 
-				<< " | d : " << d
-				<< std::endl;
-	std::cout << "min(a, b) is " << Fixed::min(a, b) << std::endl;
-	std::cout << "min(d, b) is " << Fixed::min(d, b) << std::endl;
-	std::cout << "max(a, b) is " << Fixed::max(a, b) << std::endl;
-	std::cout << "max(d, b) is " << Fixed::max(d, b) << std::endl;
-
-	return 0;
+    return 0;
 }
-
