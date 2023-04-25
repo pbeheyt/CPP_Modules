@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:10:55 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 03:08:07 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 03:25:16 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,5 @@ int	main(int ac, char **av) {
 		if (ifs.peek() != EOF)
 			ofs << std::endl;
 	}
-	ifs.close();
 	return 0;
 }
