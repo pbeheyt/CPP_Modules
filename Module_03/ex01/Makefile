@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/25 01:32:15 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/25 02:02:23 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= ScavTrap
 
 CC 		= c++
 
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98
+CFLAGS 	= -Wall -Wextra -Werror -std=c++98std::string name
 
 SRCS	= main.cpp \
 		ClapTrap.cpp \

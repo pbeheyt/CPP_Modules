@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 01:51:01 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 02:50:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs) {
 	if (this != &rhs) {
 		ClapTrap::operator=(rhs);
 		ScavTrap::operator=(rhs);
-		FragTrap::operator=(rhs);	
+		FragTrap::operator=(rhs);
+		_name = rhs._name;
 	}		
 	return *this;
 }

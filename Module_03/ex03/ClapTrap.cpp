@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:18 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 01:36:53 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 02:27:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
 		_hitPoints = rhs._hitPoints;
 		_energyPoints = rhs._energyPoints;
 		_attackDamage = rhs._attackDamage;
-		std::cout	<< "Old ClapTrap has been reassigned to Claptrap " 
-					<< _name << "!" << std::endl;
 	}
 	return *this;
 }
