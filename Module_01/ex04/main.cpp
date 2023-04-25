@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:10:55 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 01:03:11 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/25 03:08:07 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	main(int ac, char **av) {
 	if(!ifs)
 		return (std::cout << "Error\nCan't open file" << std::endl, -1);
 	std::string s1 = av[2];
+	if (s1.empty())
+		return (std::cout << "Error\nEmpty target argument" << std::endl, -1);
 	std::string s2 = av[3];
 	file += ".replace";
 	std::ofstream ofs(file.c_str());
