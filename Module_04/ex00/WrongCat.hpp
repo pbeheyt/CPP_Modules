@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/26 07:40:49 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 08:16:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODULE_04_EX00_ANIMAL_HPP_
-#define MODULE_04_EX00_ANIMAL_HPP_
+#ifndef MODULE_04_EX00_WRONGCAT_HPP_
+#define MODULE_04_EX00_WRONGCAT_HPP_
 
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal {
+class WrongCat : virtual public WrongAnimal {
 	public:
-		Animal(void);
-		Animal(Animal const &rhs);
-		Animal	&operator=(Animal const &rhs);
-		virtual ~Animal(void);
+		WrongCat(void);
+		WrongCat(WrongCat const &rhs);
+		WrongCat	&operator=(WrongCat const &rhs);
+		~WrongCat(void);
 
-		virtual const std::string &getType() const;
-		virtual void makeSound(void) const;
-
-	protected:
-		std::string	_type;
+		void makeSound(void) const;
 };
 
-#endif  // MODULE_04_EX00_ANIMAL_HPP_
+#endif  // MODULE_04_EX00_WRONGCAT_HPP_

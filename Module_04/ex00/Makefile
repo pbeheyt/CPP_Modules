@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/26 07:10:25 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/26 08:11:59 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,11 @@ CC 		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
-		Animal.cpp
+		Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp
 
 OBJS	= $(SRCS:%.cpp=obj/%.o)
 
