@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:14:12 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/19 00:31:59 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 03:39:21 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void) {
     std::cout << "Adresse de stringPTR : " << stringPTR << std::endl;
     std::cout << "Adresse de stringREF : " << &stringREF << std::endl;
     std::cout << std::endl;
+	
     std::cout << "Valeur de string     : " << str << std::endl;
     std::cout << "Valeur de stringPTR  : " << *stringPTR << std::endl;
     std::cout << "Valeur de stringREF  : " << stringREF << std::endl;
