@@ -6,12 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 21:20:16 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/18 00:20:57 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 03:12:17 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name) {
+Zombie	*newZombie(std::string name) {
     return (new Zombie(name));
 }
