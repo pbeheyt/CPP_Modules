@@ -6,13 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:09:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/26 00:28:36 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 02:16:36 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
-#include "bsp.cpp"
 
 int main(void) {
     Point a(0, 0);

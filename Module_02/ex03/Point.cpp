@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 05:21:54 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/26 00:30:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 01:41:43 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ Point::~Point(void) {
 }
 
 
-Fixed const	Point::getX(void) const {
+Fixed const	&Point::getX(void) const {
 	return _x;
 }
 
-Fixed const	Point::getY(void) const {
+Fixed const	&Point::getY(void) const {
 	return _y;
 }

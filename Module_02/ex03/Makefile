@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/26 00:27:34 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/26 02:01:21 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 SRCS	= main.cpp \
 		Fixed.cpp \
 		Point.cpp \
-		# bsp.cpp
+		bsp.cpp
 
 OBJS	= $(SRCS:%.cpp=obj/%.o)
 
