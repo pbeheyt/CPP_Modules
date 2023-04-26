@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:49:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 06:03:45 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 04:33:01 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Harl::Harl(void) {}
 Harl::~Harl(void) {}
 
 void    Harl::debug(void) {
-    std::cout	<< "love having extra bacon for my 7XL-double-cheese-triple"
+    std::cout	<< "I love having extra bacon for my 7XL-double-cheese-triple"
             	<< "-pickle-special-ketchup burger. I really do!" << std::endl;
 }
 
