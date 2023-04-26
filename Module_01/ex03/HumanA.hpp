@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:02:17 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/22 06:03:11 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 03:42:06 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 class HumanA {
 	public:
-		HumanA(std::string name, Weapon& weapon);
+		HumanA(std::string name, Weapon	&weapon);
 		~HumanA(void);
 		
 		void	attack(void) const;
 
 	private:
 		std::string _name;
-		Weapon&		_weapon;
+		Weapon		&_weapon;
 };
 
 #endif  // MODULE_01_EX03_HUMANA_HPP_
