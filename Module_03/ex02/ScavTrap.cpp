@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/28 00:12:48 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 01:46:32 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(ScavTrap const &rhs) : ClapTrap(rhs) {
-	std::cout << "[ ScavTrap ] - Copy constructor called for " << _name << std::endl;
 	*this = rhs;
+	std::cout << "[ ScavTrap ] - Copy constructor called for " << _name << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs) {

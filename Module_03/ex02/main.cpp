@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/28 00:26:20 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:57:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void) {
 	trap2.attack("enemy");
     trap2.takeDamage(100);
     trap2.beRepaired(50);
-	trap.highFivesGuys();
+	trap2.highFivesGuys();
 	std::cout << std::endl;
 
     return 0;

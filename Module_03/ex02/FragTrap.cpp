@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/28 00:24:21 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 01:46:45 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ FragTrap::FragTrap(std::string const &name) : ClapTrap(name) {
 }
 
 FragTrap::FragTrap(FragTrap const &rhs) : ClapTrap(rhs) {
-	std::cout << "[ FragTrap ] - Copy constructor called for " << _name << std::endl;
 	*this = rhs;
+	std::cout << "[ FragTrap ] - Copy constructor called for " << _name << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &rhs) {

@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:18 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/28 00:29:33 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 01:08:08 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ ClapTrap::ClapTrap(ClapTrap const &rhs) {
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
 	if (this != &rhs) {
-		_name = rhs._name;
-		_hitPoints = rhs._hitPoints;
-		_energyPoints = rhs._energyPoints;
-		_attackDamage = rhs._attackDamage;
+		this->_name = rhs._name;
+		this->_hitPoints = rhs._hitPoints;
+		this->_energyPoints = rhs._energyPoints;
+		this->_attackDamage = rhs._attackDamage;
 	}
 	return *this;
 }
