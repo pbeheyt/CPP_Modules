@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 23:31:19 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/27 03:37:10 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed {
 		Fixed(void);
 		Fixed(int const n);
 		Fixed(float const f);
-		Fixed(Fixed const &copy);
+		Fixed(Fixed const &rhs);
 		Fixed	&operator=(Fixed const &rhs);
 		~Fixed(void);
 

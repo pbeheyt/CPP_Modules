@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 03:25:24 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/27 03:37:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ Fixed::Fixed(float const f) {
     this->_value = static_cast<int>(roundf(f * (1 << this->_fractionalBits)));
 }
 
-Fixed::Fixed(Fixed const &copy) {
+Fixed::Fixed(Fixed const &rhs) {
 	// std::cout << "[ Fixed ] - Copy constructor called" << std::endl;
-    *this = copy;
+    *this = rhs;
 }
 
 Fixed	&Fixed::operator=(Fixed const &rhs) {
