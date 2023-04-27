@@ -6,29 +6,29 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:33 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 01:48:09 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:12:48 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) : ClapTrap("Unnamed") {
-    _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
-	std::cout << "ScavTrap " << _name << " is alive!" << std::endl;
+    this->_hitPoints = 100;
+    this->_energyPoints = 50;
+    this->_attackDamage = 20;
+	std::cout << "[ ScavTrap ] - Default constructor called for " << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name) {
-    _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
-	std::cout << "ScavTrap " << _name << " is alive!" << std::endl;
+    this->_hitPoints = 100;
+    this->_energyPoints = 50;
+    this->_attackDamage = 20;
+	std::cout << "[ ScavTrap ] - Default constructor called for " << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &rhs) : ClapTrap(rhs) {
+	std::cout << "[ ScavTrap ] - Copy constructor called for " << _name << std::endl;
 	*this = rhs;
-	std::cout << "ScavTrap " << _name << " has been cloned!" << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs) {
@@ -39,7 +39,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs) {
 }
 
 ScavTrap::~ScavTrap(void) {
-    	std::cout << "ScavTrap " << _name << " is dead!" << std::endl;
+		std::cout << "[ ScavTrap ] - Destructor called for " << _name << std::endl;
 }
 
 
@@ -54,6 +54,12 @@ void ScavTrap::attack(std::string const &target) {
 					<< " doesn't have enough energy to attack "
 					<< target << "!" << std::endl;
 	}
+}
+
+void ScavTrap::printStatus(void) const {
+	std::cout	<< "ScavTrap " << _name << " has " << _hitPoints
+				<< " hit points and " << _energyPoints << " energy points."
+				<< std::endl;
 }
 
 void ScavTrap::guardGate(void) {

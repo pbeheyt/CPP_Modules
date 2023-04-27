@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:36 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 02:12:55 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:28:11 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap : public ClapTrap {
 		~ScavTrap(void);
 
 		void	attack(std::string const &target);
+		void	printStatus(void) const;
 		void	guardGate(void);
 };
 

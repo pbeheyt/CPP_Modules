@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:24 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 02:22:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:26:20 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,25 @@
 #include "FragTrap.hpp"
 
 int main(void) {
-    FragTrap frag("Sylvain");
-	std::cout << std::endl;
-	
-	FragTrap frag2("Michel");
-	std::cout << std::endl;
-
-	FragTrap frag3(frag);
-	std::cout << std::endl;
-    
-	FragTrap frag4;
-	frag4.operator=(frag2);
+    FragTrap trap("Sylvain");
+	FragTrap trap2("Michel");
+	FragTrap trap3(trap);
+	FragTrap trap4;
+	trap4.operator=(trap2);
 	std::cout << std::endl;
 
-    frag.attack("enemy");
-    frag.takeDamage(5);
-    frag.beRepaired(3);
-    frag.highFivesGuys();
+    trap.printStatus();
+    trap.attack("enemy");
+    trap.takeDamage(5);
+    trap.beRepaired(3);
+	trap.highFivesGuys();
 	std::cout << std::endl;
 
-	frag2.attack("enemy");
-    frag2.takeDamage(100);
-    frag2.beRepaired(2);
-    frag.highFivesGuys();
+    trap2.printStatus();
+	trap2.attack("enemy");
+    trap2.takeDamage(100);
+    trap2.beRepaired(50);
+	trap.highFivesGuys();
 	std::cout << std::endl;
 
     return 0;

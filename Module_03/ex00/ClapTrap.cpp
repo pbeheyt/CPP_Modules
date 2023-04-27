@@ -6,12 +6,11 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:18 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/28 00:10:50 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:29:22 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <iostream>
 
 ClapTrap::ClapTrap(void) : 
 	_name("Unnamed"), 
