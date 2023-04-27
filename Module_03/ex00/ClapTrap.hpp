@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:21 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 23:10:20 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:17:20 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ClapTrap {
 		void	beRepaired(unsigned int amount);
 		void	printStatus(void) const;
 
-	protected:
+	private:
 		std::string	_name;
 		unsigned int			_hitPoints;
 		unsigned int			_energyPoints;

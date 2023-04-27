@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:18 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 23:07:38 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:10:50 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
 
 ClapTrap::~ClapTrap(void) {
 	std::cout << "[ ClapTrap ] - Destructor called for " << _name << std::endl;
-
 }
 
 
