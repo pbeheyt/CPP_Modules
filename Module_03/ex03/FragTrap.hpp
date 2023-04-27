@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:36 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/24 05:50:35 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:31:44 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class FragTrap : virtual public ClapTrap {
 		~FragTrap(void);
 
 		void	attack(std::string const &target);
+		void	printStatus(void) const;
 		void	highFivesGuys(void);
 };
 
-#endif  // MODULE_03_EX03_FRAGTRAP_HPP_
+#endif  // MODULE_03_EX02_FRAGTRAP_HPP_

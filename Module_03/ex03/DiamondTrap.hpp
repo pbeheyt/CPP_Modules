@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:47:36 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/25 02:51:06 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 00:40:30 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		~DiamondTrap(void);
 
 		using	ScavTrap::attack;
+		void	printStatus(void) const;
 		void	whoAmI(void);
 		
 	private:
