@@ -1,0 +1,140 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
+/*   Updated: 2023/04/27 04:46:35 by pbeheyt          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Brain.hpp"
+
+Brain::Brain(void) {
+    std::cout << "[ " << "Brain" << " ] - Default constructor called" << std::endl;
+}
+
+Brain::Brain(Brain const &rhs) {
+    std::cout << "[ " << "Brain" << " ] - Copy constructor called" << std::endl;
+	*this = rhs;
+}
+
+Brain	&Brain::operator=(Brain const &rhs) {
+	std::cout << "[ " << "Brain" << " ] - Assignement constructor called" << std::endl;
+	if (this!= &rhs) {
+		this->_ideas = rhs.ideas;
+	}
+	return *this;
+}
+
+Brain::~Brain(void) {
+    std::cout << "[ " << "Brain" << " ] - Default destructor called" << std::endl;
+}
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
+/*   Updated: 2023/04/27 04:51:25 by pbeheyt          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef MODULE_04_EX01_CAT_HPP_
+#define MODULE_04_EX01_CAT_HPP_
+
+#include <iostream>
+
+class Brain {
+	public:
+		Brain(void);
+		Brain(Brain const &rhs);
+		Brain	&operator=(Brain const &rhs);
+		~Brain(void);
+
+	private:
+		std::sting	_ideas[100];
+};
+
+#endif  // MODULE_04_EX01_CAT_HPP_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
+/*   Updated: 2023/04/27 04:56:59 by pbeheyt          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Cat.hpp"
+
+Cat::Cat(void) : Animal() {
+	this->_type = "Cat";
+    std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
+	this->_brain = new Brain();
+}
+
+Cat::Cat(Cat const &rhs) : Animal(rhs) {
+    std::cout << "[ " << this->_type << " ] - Copy constructor called" << std::endl;
+	*this = rhs;
+}
+
+Cat	&Cat::operator=(Cat const &rhs) {
+	std::cout << "[ " << this->_type << " ] - Assignement constructor called" << std::endl;
+	if (this!= &rhs) {
+		Animal::operator=(rhs);
+	}
+	return *this;
+}
+
+Cat::~Cat(void) {
+    std::cout << "[ " << this->_type << " ] - Default destructor called" << std::endl;
+	delete _brain;
+}
+
+
+void	Cat::makeSound(void) const {
+	std::cout << "*" << this->_type << " sounds*" << std::endl;
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
+/*   Updated: 2023/04/27 04:55:54 by pbeheyt          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef MODULE_04_EX01_CAT_HPP_
+#define MODULE_04_EX01_CAT_HPP_
+
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Brain;
+
+class Cat : virtual public Animal {
+	public:
+		Cat(void);
+		Cat(Cat const &rhs);
+		Cat	&operator=(Cat const &rhs);
+		~Cat(void);
+
+		void makeSound(void) const;
+
+	private:
+		Brain	*_brain;
+};
+
+#endif  // MODULE_04_EX01_CAT_HPP_
