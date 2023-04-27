@@ -6,15 +6,15 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 04:12:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/27 04:29:36 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat(void) : WrongAnimal() {
-    std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
 	this->_type = "WrongCat";
+    std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(WrongCat const &rhs) : WrongAnimal(rhs) {
