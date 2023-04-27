@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:09:22 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 01:36:53 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/27 03:18:40 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main(void) {
 
     Fixed e = a + b;
 
-    std::cout << "e is " << e << std::endl;
+    std::cout << "e (a+b) is " << e << std::endl;
 
     return 0;
 }
