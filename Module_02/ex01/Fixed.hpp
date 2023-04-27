@@ -6,21 +6,21 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/23 23:30:46 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/26 23:22:58 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODULE_02_EX01_FIXED_HPP_
-# define MODULE_02_EX01_FIXED_HPP_
+#define MODULE_02_EX01_FIXED_HPP_
 
-# include <iostream>
+#include <iostream>
 
 class Fixed {
 	public:
 		Fixed(void);
 		Fixed(int const n);
 		Fixed(float const f);
-		Fixed(Fixed const &copy);
+		Fixed(Fixed const &rhs);
 		Fixed	&operator=(Fixed const &rhs);
 		~Fixed(void);
 

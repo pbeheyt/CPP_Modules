@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 22:10:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/26 00:30:32 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/27 01:35:25 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ Fixed::Fixed(float const f) {
 }
 
 Fixed::Fixed(Fixed const &copy) {
-    *this = copy;
 	// std::cout << "[Fixed] - Copy constructor called" << std::endl;
+    *this = copy;
 }
 
 Fixed	&Fixed::operator=(Fixed const &rhs) {
+	// std::cout << "[Fixed] - Copy assignment operator called" << std::endl;
 	if (this != &rhs) {
         this->_value = rhs.getRawBits();
     }
-	// std::cout << "[Fixed] - Copy assignment operator called" << std::endl;
     return *this;
 }
 
@@ -54,7 +54,6 @@ int	Fixed::toInt(void) const {
 }
 
 int	Fixed::getRawBits(void) const {
-	// std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
 }
 
