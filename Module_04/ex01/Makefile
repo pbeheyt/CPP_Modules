@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/27 05:07:26 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/04/27 05:22:56 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,7 @@ SRCS	= main.cpp \
 		Animal.cpp \
 		Cat.cpp \
 		Dog.cpp \
-		Brain.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp
+		Brain.cpp
 
 OBJS	= $(SRCS:%.cpp=obj/%.o)
 
