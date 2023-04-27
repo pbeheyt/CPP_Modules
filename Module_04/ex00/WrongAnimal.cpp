@@ -13,31 +13,31 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) : _type("WrongAnimal") {
-    std::cout << "[ " << _type << " ] - Default constructor called" << std::endl;
+    std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &rhs) {
+    std::cout << "[ " << this->_type << " ] - Copy constructor called" << std::endl;
 	*this = rhs;
-    std::cout << "[ " << _type << " ] - Copy constructor called" << std::endl;
 }
 
 WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &rhs) {
+	std::cout << "[ " << this->_type << " ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		_type = rhs._type;
-		std::cout << "[ " << _type << " ] - Assignement constructor called" << std::endl;
 	}
 	return *this;
 }
 
 WrongAnimal::~WrongAnimal(void) {
-    std::cout << "[ " << _type << " ] - Default destructor called" << std::endl;
+    std::cout << "[ " << this->_type << " ] - Default destructor called" << std::endl;
 }
 
 
 const std::string &WrongAnimal::getType(void) const {
-	return _type;
+	return this->_type;
 }
 
 void	WrongAnimal::makeSound(void) const {
-	std::cout << "*" << _type << " sounds*" << std::endl;
+	std::cout << "*" << this->_type << " sounds*" << std::endl;
 }
