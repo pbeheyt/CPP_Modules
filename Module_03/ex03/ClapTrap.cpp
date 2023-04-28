@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:31:18 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/28 01:46:00 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/28 01:58:48 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ ClapTrap::ClapTrap(std::string const &name) :
 }
 
 ClapTrap::ClapTrap(ClapTrap const &rhs) {  
-	std::cout << "[ ClapTrap ] - Copy constructor called for " << _name << std::endl;
 	*this = rhs;
+	std::cout << "[ ClapTrap ] - Copy constructor called for " << _name << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
