@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/29 07:06:46 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/04/29 07:12:43 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Ice : virtual public AMateria {
 		~Ice(void);
 
 		Ice *clone(void) const;
-
 };
 
 #endif // MODULE_04_EX03_ICE_HPP_

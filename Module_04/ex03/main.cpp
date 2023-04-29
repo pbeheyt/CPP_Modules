@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/29 07:12:49 by pbeheyt          ###   ########.fr       */
+/*   Created: 2023/04/29 07:14:20 by pbeheyt           #+#    #+#             */
+/*   Updated: 2023/04/29 07:15:19 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODULE_04_EX03_CURE_HPP_
-#define MODULE_04_EX03_CURE_HPP_
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
 
-#include "AMateria.hpp"
+int	main(void) {
 
-class Cure : virtual public AMateria {
-	public:
-		Cure(void);
-		Cure(Cure const &rhs);
-		Cure & operator=(Cure const &rhs);
-		~Cure(void);
-
-		Cure *clone(void) const;
-};
-
-#endif // MODULE_04_EX03_CURE_HPP_
+	return 0;
+}
