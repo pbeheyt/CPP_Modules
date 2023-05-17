@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 05:45:57 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 01:00:08 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ const std::string &AAnimal::getType(void) const {
 }
 
 void	AAnimal::makeSound(void) const {
-	std::cout << "*" << this->_type << " sounds*" << std::endl;
+	std::cout << "*Animal sounds*" << std::endl;
 }

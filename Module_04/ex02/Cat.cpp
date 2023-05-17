@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 05:46:26 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 01:00:36 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ Cat::~Cat(void) {
 
 
 void	Cat::makeSound(void) const {
-	std::cout << "*" << this->_type << " sounds*" << std::endl;
+	std::cout << "*Cat sounds*" << std::endl;
 }
