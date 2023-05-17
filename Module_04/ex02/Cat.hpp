@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 05:45:02 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 01:02:34 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Brain;
 
-class Cat : virtual public AAnimal {
+class Cat : public AAnimal {
 	public:
 		Cat(void);
 		Cat(Cat const &rhs);

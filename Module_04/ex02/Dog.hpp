@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 05:44:58 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 01:02:38 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Brain;
 
-class Dog : virtual public AAnimal {
+class Dog : public AAnimal {
 	public:
 		Dog(void);
 		Dog(Dog const &rhs);
