@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/26 08:16:51 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/17 23:50:04 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "WrongAnimal.hpp"
 
-class WrongCat : virtual public WrongAnimal {
+class WrongCat : public WrongAnimal {
 	public:
 		WrongCat(void);
 		WrongCat(WrongCat const &rhs);

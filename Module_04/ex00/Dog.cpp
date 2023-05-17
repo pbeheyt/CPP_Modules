@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 04:29:13 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 00:24:55 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ Dog::~Dog(void) {
 
 
 void	Dog::makeSound(void) const {
-	std::cout << "*" << this->_type << " sounds*" << std::endl;
+	std::cout << "*Dog sounds*" << std::endl;
 }

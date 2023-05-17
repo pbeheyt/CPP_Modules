@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/26 07:41:46 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/17 23:52:00 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class WrongAnimal {
 		WrongAnimal	&operator=(WrongAnimal const &rhs);
 		virtual ~WrongAnimal(void);
 
-		virtual const std::string &getType() const;
-		virtual void makeSound(void) const;
+		const std::string &getType() const;
+		void makeSound(void) const;
 
 	protected:
 		std::string	_type;

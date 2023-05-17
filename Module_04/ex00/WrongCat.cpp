@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 04:29:36 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 00:23:59 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ WrongCat::~WrongCat(void) {
 
 
 void	WrongCat::makeSound(void) const {
-	std::cout << "*" << this->_type << " sounds*" << std::endl;
+	std::cout << "*Wrong cat sounds*" << std::endl;
 }
