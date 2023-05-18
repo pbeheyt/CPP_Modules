@@ -6,12 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/18 00:55:19 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 03:18:15 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODULE_04_EX00_ANIMAL_HPP_
-#define MODULE_04_EX00_ANIMAL_HPP_
+#ifndef MODULE_04_EX01_ANIMAL_HPP_
+#define MODULE_04_EX01_ANIMAL_HPP_
 
 #include <iostream>
 
@@ -29,4 +29,4 @@ class Animal {
 		std::string	_type;
 };
 
-#endif  // MODULE_04_EX00_ANIMAL_HPP_
+#endif  // MODULE_04_EX01_ANIMAL_HPP_

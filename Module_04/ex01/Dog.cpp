@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/18 00:59:53 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 03:16:41 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog(void) : Animal() {
 	this->_type = "Dog";
     std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
+		this->_brain = new Brain();
 }
 
 Dog::Dog(Dog const &rhs) : Animal(rhs) {
@@ -32,6 +33,7 @@ Dog	&Dog::operator=(Dog const &rhs) {
 
 Dog::~Dog(void) {
     std::cout << "[ " << this->_type << " ] - Default destructor called" << std::endl;
+	delete _brain;
 }
 
 
