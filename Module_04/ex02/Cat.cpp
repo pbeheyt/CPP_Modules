@@ -6,19 +6,19 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/18 03:17:36 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 03:33:35 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal() {
+Cat::Cat(void) : AAnimal() {
 	this->_type = "Cat";
     std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
 	this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const &rhs) : Animal(rhs) {
+Cat::Cat(Cat const &rhs) : AAnimal(rhs) {
     std::cout << "[ " << this->_type << " ] - Copy constructor called" << std::endl;
 	*this = rhs;
 }
@@ -26,7 +26,7 @@ Cat::Cat(Cat const &rhs) : Animal(rhs) {
 Cat	&Cat::operator=(Cat const &rhs) {
 	std::cout << "[ " << this->_type << " ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
-		Animal::operator=(rhs);
+		AAnimal::operator=(rhs);
 	}
 	return *this;
 }

@@ -6,19 +6,19 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/18 03:16:41 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/18 03:33:44 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal() {
+Dog::Dog(void) : AAnimal() {
 	this->_type = "Dog";
     std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
 		this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const &rhs) : Animal(rhs) {
+Dog::Dog(Dog const &rhs) : AAnimal(rhs) {
     std::cout << "[ " << this->_type << " ] - Copy constructor called" << std::endl;
 	*this = rhs;
 }
@@ -26,7 +26,7 @@ Dog::Dog(Dog const &rhs) : Animal(rhs) {
 Dog	&Dog::operator=(Dog const &rhs) {
 	std::cout << "[ " << this->_type << " ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
-		Animal::operator=(rhs);
+		AAnimal::operator=(rhs);
 	}
 	return *this;
 }
