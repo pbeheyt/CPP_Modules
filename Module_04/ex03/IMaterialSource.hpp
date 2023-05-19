@@ -6,14 +6,14 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/29 06:04:32 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/19 06:46:48 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODULE_04_EX03_IMATERIASOURCE_HPP_
 #define MODULE_04_EX03_IMATERIASOURCE_HPP_
 
-#include <iostream>
+#include "AMateria.hpp"
 
 class IMateriaSource {
 	public:

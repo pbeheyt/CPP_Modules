@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/29 07:12:49 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/19 02:54:50 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cure : virtual public AMateria {
 		Cure(void);
 		Cure(Cure const &rhs);
 		Cure & operator=(Cure const &rhs);
-		~Cure(void);
+		virtual ~Cure(void);
 
 		Cure *clone(void) const;
 };

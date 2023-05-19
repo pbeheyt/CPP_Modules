@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/29 07:12:43 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/19 02:54:43 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Ice : virtual public AMateria {
 		Ice(void);
 		Ice(Ice const &rhs);
 		Ice & operator=(Ice const &rhs);
-		~Ice(void);
+		virtual ~Ice(void);
 
 		Ice *clone(void) const;
 };
