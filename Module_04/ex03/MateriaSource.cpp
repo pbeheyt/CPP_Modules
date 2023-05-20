@@ -6,15 +6,14 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 22:05:37 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 00:08:47 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(void) {
+MateriaSource::MateriaSource(void) : _materia() {
 	std::cout << "[ MateriaSource ] - Default constructor called" << std::endl;
-	std::memset(this->_materia, 0, sizeof(AMateria) * 4);
 }
 
 MateriaSource::MateriaSource(MateriaSource const &rhs) {

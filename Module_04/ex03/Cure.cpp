@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 05:21:57 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 22:50:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void Cure::use(ICharacter &target) {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
-Cure *Cure::clone(void) const {
-	Cure *clone = new Cure();
-	return clone;
+AMateria *Cure::clone(void) const {
+	return new Cure();
 }

@@ -6,17 +6,16 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 21:34:31 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 00:20:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODULE_04_EX03_CHARACTER_HPP_
 #define MODULE_04_EX03_CHARACTER_HPP_
 
-// #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-class Character : virtual public ICharacter {
+class Character : public ICharacter {
 	public:
 		Character(std::string name);
 		Character(Character const &rhs);

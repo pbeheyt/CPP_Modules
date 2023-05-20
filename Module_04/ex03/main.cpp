@@ -6,14 +6,16 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 07:14:20 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 21:35:03 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 23:13:34 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "ICharacter.hpp"
 #include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
 int	main(void) {
 
