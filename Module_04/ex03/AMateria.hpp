@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/19 02:54:55 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 05:43:09 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #define MODULE_04_EX03_AMATERIA_HPP_
 
 #include <iostream>
+#include <cstring>
+#include "ICharacter.hpp"
 
-class ICharacter;
+// class ICharacter;
 
 class AMateria {
 	public :

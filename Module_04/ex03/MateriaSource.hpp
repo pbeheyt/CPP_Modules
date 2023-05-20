@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 05:22:49 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 06:40:32 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODULE_04_EX03_CURE_HPP_
-#define MODULE_04_EX03_CURE_HPP_
+#ifndef MODULE_04_EX03_MATERIASOURCE_HPP_
+#define MODULE_04_EX03_MATERIASOURCE_HPP_
 
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Cure : virtual public AMateria {
+class MateriaSource : public IMateriaSource {
 	public:
-		Cure(void);
-		Cure(Cure const &rhs);
-		Cure & operator=(Cure const &rhs);
-		virtual ~Cure(void);
+		MateriaSource(void);
+		MateriaSource(MateriaSource const &rhs);
+		MateriaSource& operator=(MateriaSource const &rhs);
+		~MateriaSource(void);
 
-		void use(ICharacter& target);
-		Cure *clone(void) const;
+		void learnMateria(AMateria *m);
+		AMateria *createMateria(const std::string &type);
+
+	private:
+		AMateria	*_materia[4];
 };
 
-#endif // MODULE_04_EX03_CURE_HPP_
+#endif // MODULE_04_EX03_MATERIASOURCE_HPP_
