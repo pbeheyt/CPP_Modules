@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 06:32:54 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 21:40:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ std::string const & AMateria::getType(void) const {
 }
 
 void AMateria::use(ICharacter &target) {
-	
+	(void)target;
 }

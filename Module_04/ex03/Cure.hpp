@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 05:22:49 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 21:52:03 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define MODULE_04_EX03_CURE_HPP_
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Cure : virtual public AMateria {
 	public:
@@ -22,7 +23,7 @@ class Cure : virtual public AMateria {
 		Cure & operator=(Cure const &rhs);
 		virtual ~Cure(void);
 
-		void use(ICharacter& target);
+		void use(ICharacter &target);
 		Cure *clone(void) const;
 };
 

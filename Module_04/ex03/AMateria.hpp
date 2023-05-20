@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 05:43:09 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 21:40:12 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 #include <iostream>
 #include <cstring>
-#include "ICharacter.hpp"
 
-// class ICharacter;
+class ICharacter;
 
 class AMateria {
 	public :

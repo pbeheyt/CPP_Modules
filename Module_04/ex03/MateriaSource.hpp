@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 06:40:32 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/20 22:05:30 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class MateriaSource : public IMateriaSource {
 		~MateriaSource(void);
 
 		void learnMateria(AMateria *m);
-		AMateria *createMateria(const std::string &type);
+		AMateria *createMateria(std::string const &type);
 
 	private:
 		AMateria	*_materia[4];
