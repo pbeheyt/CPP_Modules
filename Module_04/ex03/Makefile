@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/29 07:17:35 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/05/20 06:42:11 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS	= main.cpp \
 		AMateria.cpp \
 		Character.cpp \
 		Cure.cpp \
-		Ice.cpp
+		Ice.cpp \
+		MateriaSource.cpp
 
 OBJS	= $(SRCS:%.cpp=obj/%.o)
 
