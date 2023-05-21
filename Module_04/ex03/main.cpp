@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 07:14:20 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 23:13:34 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:09:06 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,29 @@
 #include "ICharacter.hpp"
 #include "MateriaSource.hpp"
 #include "IMateriaSource.hpp"
+
+// int	main(void) {
+
+// 	IMateriaSource *src = new MateriaSource();
+// 	src->learnMateria(new Ice());
+// 	src->learnMateria(new Cure());	
+// 	ICharacter *me = new Character("me");
+// 	AMateria *tmp;
+	
+// 	tmp = src->createMateria("ice");
+// 	me->equip(tmp);
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+	
+// 	ICharacter *bob = new Character("bob");
+// 	me->use(0, *bob);
+// 	me->use(1, *bob);
+
+// 	delete bob;
+// 	delete me;
+// 	delete src;
+// 	return 0;
+// }
 
 int	main(void) {
 
@@ -29,10 +52,23 @@ int	main(void) {
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 	
 	ICharacter *bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	
+	me->use(3, *bob);
+	delete tmp;
+	me->unequip(3);
+	me->use(3, *bob);
+
+
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
 
 	delete bob;
 	delete me;

@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 00:20:18 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 05:32:20 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Character : public ICharacter {
 		Character &operator=(Character const &rhs);
 		~Character(void);
 
-		std::string const	&getName(void) const;
-		void 				equip(AMateria *m);
-		void				unequip(int idx);
-		void				use(int idx, ICharacter &target);
+		virtual std::string const	&getName(void) const;
+		virtual void 				equip(AMateria *m);
+		virtual void				unequip(int idx);
+		virtual void				use(int idx, ICharacter &target);
 
 	protected:
 		std::string	_name;

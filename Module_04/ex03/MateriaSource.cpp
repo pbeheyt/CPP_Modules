@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 00:08:47 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 05:45:23 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void MateriaSource::learnMateria(AMateria *m) {
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type) {
-	for (int i = 0; i < 4; i++) {
-		if (this->_materia[i] && this->_materia[i]->getType() == type)
+	for (int i = 0; i < 4 && _materia[i]; i++) {
+		if (this->_materia[i]->getType() == type)
 			return this->_materia[i]->clone();
 	}
 	return NULL;
