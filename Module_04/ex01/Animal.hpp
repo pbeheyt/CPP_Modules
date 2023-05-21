@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/18 03:18:15 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:49:50 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Animal {
 	public:
 		Animal(void);
+		Animal(std::string const &type);
 		Animal(Animal const &rhs);
 		Animal	&operator=(Animal const &rhs);
 		virtual ~Animal(void);
