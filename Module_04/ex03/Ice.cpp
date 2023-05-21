@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:57:27 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:03:17 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ Ice	&Ice::operator=(Ice const &rhs) {
 Ice::~Ice(void) {
     std::cout << "[ Ice ] - Default destructor called" << std::endl;
 }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 void Ice::use(ICharacter &target) {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;

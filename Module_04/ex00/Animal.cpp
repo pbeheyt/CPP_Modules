@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:55:53 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:00:48 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ Animal::~Animal(void) {
     std::cout << "[ Animal ] - Default destructor called" << std::endl;
 }
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 const std::string &Animal::getType(void) const {
-	return _type;
+	return this->_type;
 }
 
 void	Animal::makeSound(void) const {

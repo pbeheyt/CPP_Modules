@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:57:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:02:55 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ AMateria	&AMateria::operator=(const AMateria &rhs) {
 AMateria::~AMateria(void) {
     std::cout << "[ AMateria ] - Default destructor called" << std::endl;
 }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 std::string const & AMateria::getType(void) const {
 	return this->_type;

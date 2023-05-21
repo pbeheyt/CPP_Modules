@@ -32,6 +32,7 @@ WrongAnimal::~WrongAnimal(void) {
     std::cout << "[ WrongAnimal ] - Default destructor called" << std::endl;
 }
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 const std::string &WrongAnimal::getType(void) const {
 	return this->_type;
