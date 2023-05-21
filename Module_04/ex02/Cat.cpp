@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 23:17:52 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/22 00:19:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cat	&Cat::operator=(Cat const &rhs) {
 
 Cat::~Cat(void) {
     std::cout << "[ Cat ] - Default destructor called" << std::endl;
-	delete _brain;
+	delete this->_brain;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
