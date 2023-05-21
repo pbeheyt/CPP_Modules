@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/19 01:22:56 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:40:17 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 Dog::Dog(void) : Animal() {
 	this->_type = "Dog";
-    std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
+    std::cout << "[ Dog ] - Default constructor called" << std::endl;
 }
 
 Dog::Dog(Dog const &rhs) : Animal(rhs) {
-    std::cout << "[ " << this->_type << " ] - Copy constructor called" << std::endl;
+    std::cout << "[ Dog ] - Copy constructor called" << std::endl;
 	*this = rhs;
 }
 
 Dog	&Dog::operator=(Dog const &rhs) {
-	std::cout << "[ " << this->_type << " ] - Assignement constructor called" << std::endl;
+	std::cout << "[ Dog ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		Animal::operator=(rhs);
 	}
@@ -31,7 +31,7 @@ Dog	&Dog::operator=(Dog const &rhs) {
 }
 
 Dog::~Dog(void) {
-    std::cout << "[ " << this->_type << " ] - Default destructor called" << std::endl;
+    std::cout << "[ Dog ] - Default destructor called" << std::endl;
 }
 
 

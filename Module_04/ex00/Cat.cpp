@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/18 00:24:46 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:39:58 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 Cat::Cat(void) : Animal() {
 	this->_type = "Cat";
-    std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
+    std::cout << "[ Cat ] - Default constructor called" << std::endl;
 }
 
 Cat::Cat(Cat const &rhs) : Animal(rhs) {
-    std::cout << "[ " << this->_type << " ] - Copy constructor called" << std::endl;
+    std::cout << "[ Cat ] - Copy constructor called" << std::endl;
 	*this = rhs;
 }
 
 Cat	&Cat::operator=(Cat const &rhs) {
-	std::cout << "[ " << this->_type << " ] - Assignement constructor called" << std::endl;
+	std::cout << "[ Cat ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		Animal::operator=(rhs);
 	}
@@ -31,7 +31,7 @@ Cat	&Cat::operator=(Cat const &rhs) {
 }
 
 Cat::~Cat(void) {
-    std::cout << "[ " << this->_type << " ] - Default destructor called" << std::endl;
+    std::cout << "[ Cat ] - Default destructor called" << std::endl;
 }
 
 

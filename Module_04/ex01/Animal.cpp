@@ -6,23 +6,23 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/18 00:24:25 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:41:22 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal(void) : _type("Animal") {
-    std::cout << "[ " << this->_type << " ] - Default constructor called" << std::endl;
+    std::cout << "[ Animal ] - Default constructor called" << std::endl;
 }
 
 Animal::Animal(Animal const &rhs) {
-	std::cout << "[ " << this->_type << " ] - Copy constructor called" << std::endl;
+	std::cout << "[ Animal ] - Copy constructor called" << std::endl;
 	*this = rhs;
 }
 
 Animal	&Animal::operator=(Animal const &rhs) {
-	std::cout << "[ " << this->_type << " ] - Assignement constructor called" << std::endl;
+	std::cout << "[ Animal ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		this->_type = rhs._type;
 	}
@@ -30,7 +30,7 @@ Animal	&Animal::operator=(Animal const &rhs) {
 }
 
 Animal::~Animal(void) {
-    std::cout << "[ " << this->_type << " ] - Default destructor called" << std::endl;
+    std::cout << "[ Animal ] - Default destructor called" << std::endl;
 }
 
 
