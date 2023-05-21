@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:07:24 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:31:57 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat(void);
 		WrongCat(WrongCat const &rhs);
 		WrongCat &operator=(WrongCat const &rhs);
-		~WrongCat(void);
+		virtual  ~WrongCat(void);
 
 		void	makeSound(void) const;
 };

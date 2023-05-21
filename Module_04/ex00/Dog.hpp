@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:07:31 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:31:49 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public Animal {
 		Dog(void);
 		Dog(Dog const &rhs);
 		Dog &operator=(Dog const &rhs);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		virtual void	makeSound(void) const;
 };
