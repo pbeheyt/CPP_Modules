@@ -6,16 +6,14 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:02:45 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 23:17:36 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : AAnimal() {
+Dog::Dog(void) : AAnimal("Dog"), _brain(new Brain()) {
     std::cout << "[ Dog ] - Default constructor called" << std::endl;
-	this->_type = "Dog";
-	this->_brain = new Brain();
 }
 
 Dog::Dog(Dog const &rhs) : AAnimal(rhs) {
@@ -26,6 +24,7 @@ Dog::Dog(Dog const &rhs) : AAnimal(rhs) {
 Dog	&Dog::operator=(Dog const &rhs) {
 	if (this!= &rhs) {
 		AAnimal::operator=(rhs);
+		this->_brain = new Brain();
 	}
 	return *this;
 }
