@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:07:28 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:28:09 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class WrongAnimal {
 	public:
 		WrongAnimal(void);
+		WrongAnimal(std::string const &type);
 		WrongAnimal(WrongAnimal const &rhs);
 		WrongAnimal &operator=(WrongAnimal const &rhs);
 		virtual ~WrongAnimal(void);
