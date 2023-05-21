@@ -22,7 +22,6 @@ WrongAnimal::WrongAnimal(WrongAnimal const &rhs) {
 }
 
 WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &rhs) {
-	std::cout << "[ WrongAnimal ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		_type = rhs._type;
 	}

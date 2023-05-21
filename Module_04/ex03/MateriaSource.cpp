@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 05:45:23 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:57:34 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ MateriaSource::MateriaSource(MateriaSource const &rhs) {
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &rhs) {
-	std::cout << "[ Character ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		this->~MateriaSource();
 		for (int i = 0; i < 4; i++) {

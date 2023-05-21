@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 22:50:13 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:57:27 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Ice::Ice(Ice const &rhs) : AMateria(rhs) {
 }
 
 Ice	&Ice::operator=(Ice const &rhs) {
-	std::cout << "[ Ice ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		AMateria::operator=(rhs);
 	}

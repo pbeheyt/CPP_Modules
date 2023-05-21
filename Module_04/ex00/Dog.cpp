@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:40:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:56:01 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Dog::Dog(Dog const &rhs) : Animal(rhs) {
 }
 
 Dog	&Dog::operator=(Dog const &rhs) {
-	std::cout << "[ Dog ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		Animal::operator=(rhs);
 	}

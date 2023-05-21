@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:43:16 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:56:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ AAnimal::AAnimal(AAnimal const &rhs) {
 }
 
 AAnimal	&AAnimal::operator=(AAnimal const &rhs) {
-	std::cout << "[ Animal ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		this->_type = rhs._type;
 	}

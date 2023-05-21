@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:44:35 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:57:01 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ Cat::Cat(Cat const &rhs) : AAnimal(rhs) {
 }
 
 Cat	&Cat::operator=(Cat const &rhs) {
-	std::cout << "[ Cat ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		AAnimal::operator=(rhs);
 	}

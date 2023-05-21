@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:08 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/20 22:50:18 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:57:23 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Cure::Cure(Cure const &rhs) : AMateria(rhs) {
 }
 
 Cure &Cure::operator=(Cure const &rhs) {
-	std::cout << "[ Cure ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		AMateria::operator=(rhs);
 	}

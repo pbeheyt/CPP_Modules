@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:43:40 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:56:56 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Brain::Brain(Brain const &rhs) {
 }
 
 Brain	&Brain::operator=(Brain const &rhs) {
-	std::cout << "[ Brain ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		for(int i = 0; i < 100; i++) {
 			this->_ideas[i] = rhs._ideas[i];

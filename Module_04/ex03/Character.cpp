@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 00:08:27 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:57:16 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Character::Character(Character const &rhs) {
 }
 
 Character &Character::operator=(Character const &rhs) {
-	std::cout << "[ Character ] - Assignement constructor called" << std::endl;
 	if (this!= &rhs) {
 		this->~Character();
 		this->_name = rhs._name;
