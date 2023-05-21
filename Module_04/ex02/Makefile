@@ -6,11 +6,11 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/27 05:40:33 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/05/21 23:33:44 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Animal
+NAME	= AAnimal
 
 CC 		= c++
 

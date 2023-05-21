@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 07:08:41 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 05:44:43 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 23:32:50 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int main(void)
 {
+	// AAnimal test;
+	
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
 	delete j;//should not create a leak
