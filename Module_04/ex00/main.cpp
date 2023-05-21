@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 07:08:41 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 06:48:47 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 06:50:02 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
 	delete i;
 	delete j;
 	std::cout	<< std::endl
-				<< std::endl
+				<< std::endl;
 
 	const WrongAnimal* metatest = new WrongAnimal();
 	const WrongAnimal* x = new WrongCat();
