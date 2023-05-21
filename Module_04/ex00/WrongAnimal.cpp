@@ -34,7 +34,7 @@ WrongAnimal::~WrongAnimal(void) {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-const std::string &WrongAnimal::getType(void) const {
+std::string const	&WrongAnimal::getType(void) const {
 	return this->_type;
 }
 

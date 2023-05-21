@@ -6,14 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:00:56 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:26:22 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal() {
-	this->_type = "Cat";
+Cat::Cat(void) : Animal("Cat") {
     std::cout << "[ Cat ] - Default constructor called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/17 23:49:32 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:07:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Dog : public Animal {
 	public:
 		Dog(void);
 		Dog(Dog const &rhs);
-		Dog	&operator=(Dog const &rhs);
+		Dog &operator=(Dog const &rhs);
 		~Dog(void);
 
-		virtual void makeSound(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif  // MODULE_04_EX00_DOG_HPP_

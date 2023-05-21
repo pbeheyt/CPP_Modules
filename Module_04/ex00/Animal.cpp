@@ -6,13 +6,17 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:00:48 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/21 22:25:39 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal(void) : _type("Animal") {
+    std::cout << "[ Animal ] - Default constructor called" << std::endl;
+}
+
+Animal::Animal(std::string const &type) : _type(type) {
     std::cout << "[ Animal ] - Default constructor called" << std::endl;
 }
 
