@@ -6,24 +6,24 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/04/26 08:11:59 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/05/23 02:30:13 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Animal
+NAME		= Animal
 
-CC 		= c++
+CXX 		= c++
 
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= main.cpp \
-		Animal.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp
+SRCS		= main.cpp \
+			Animal.cpp \
+			Cat.cpp \
+			Dog.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
 
-OBJS	= $(SRCS:%.cpp=obj/%.o)
+OBJS		= $(SRCS:%.cpp=obj/%.o)
 
 all: $(NAME)
 

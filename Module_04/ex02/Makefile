@@ -6,23 +6,23 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/05/21 23:33:44 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/05/23 02:27:04 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= AAnimal
+NAME		= AAnimal
 
-CC 		= c++
+CXX			= c++
 
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= main.cpp \
-		AAnimal.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		Brain.cpp
+SRCS		= main.cpp \
+			AAnimal.cpp \
+			Cat.cpp \
+			Dog.cpp \
+			Brain.cpp
 
-OBJS	= $(SRCS:%.cpp=obj/%.o)
+OBJS		= $(SRCS:%.cpp=obj/%.o)
 
 all: $(NAME)
 

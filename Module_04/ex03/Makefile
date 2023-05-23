@@ -6,24 +6,24 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/05/20 22:15:59 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/05/23 02:25:59 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Interface
+NAME		= Interface
 
-CC 		= c++
+CXX			= c++
 
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS	= main.cpp \
-		AMateria.cpp \
-		Character.cpp \
-		Cure.cpp \
-		Ice.cpp \
-		MateriaSource.cpp
+SRCS		= main.cpp \
+			AMateria.cpp \
+			Character.cpp \
+			Cure.cpp \
+			Ice.cpp \
+			MateriaSource.cpp
 
-OBJS	= $(SRCS:%.cpp=obj/%.o)
+OBJS		= $(SRCS:%.cpp=obj/%.o)
 
 all: $(NAME)
 
