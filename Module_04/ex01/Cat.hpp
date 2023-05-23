@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:53:05 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 03:21:56 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class Cat : public Animal {
 		Cat(Cat const &rhs);
 		Cat	&operator=(Cat const &rhs);
 		virtual ~Cat(void);
+
+		void		setBrainIdea(int index, std::string const &idea);
+		std::string	&getBrainIdea(int index);
 
 	private:
 		Brain	*_brain;

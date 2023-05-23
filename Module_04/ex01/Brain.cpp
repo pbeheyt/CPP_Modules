@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:02:10 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 03:22:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 Brain::Brain(void) {
     std::cout << "[ Brain ] - Default constructor called" << std::endl;
+	this->_ideas[0] = "Eating";
+	this->_ideas[1] = "Sleeping";
+	this->_ideas[2] = "Playing";
 }
 
 Brain::Brain(Brain const &rhs) {
@@ -32,6 +35,16 @@ Brain	&Brain::operator=(Brain const &rhs) {
 
 Brain::~Brain(void) {
     std::cout << "[ Brain ] - Default destructor called" << std::endl;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+void	Brain::setIdea(int index, std::string const &idea) {
+	this->_ideas[index] = idea;
+}
+
+std::string	&Brain::getIdea(int index) {
+	return this->_ideas[index];
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/

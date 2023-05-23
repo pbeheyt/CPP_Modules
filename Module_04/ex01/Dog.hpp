@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:53:10 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 03:30:16 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class Dog : public Animal {
 		Dog(Dog const &rhs);
 		Dog	&operator=(Dog const &rhs);
 		virtual ~Dog(void);
+
+		void		setBrainIdea(int index, std::string const &idea);
+		std::string	&getBrainIdea(int index);
 
 	private:
 		Brain	*_brain;

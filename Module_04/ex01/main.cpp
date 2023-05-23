@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 07:08:41 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/04/27 05:37:59 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 03:30:57 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,27 @@ int main(void)
 	for (int i = 0; i < 10 ; i++) {
 		delete animalList[i];
 	}
-	std::cout << std::endl;
-
+	std::cout	<< std::endl
+				<< std::endl
+				<< std::endl;
+	
+	Dog A;
+	Dog B;
+	
+	std::cout	<< std::endl;
+	std::cout << "<A> : " << A.getBrainIdea(0) << " is my first idea!" << std::endl; 
+	std::cout << "<B> : " << B.getBrainIdea(0) << " is my first idea!" << std::endl; 
+	std::cout	<< std::endl;
+	
+	B.setBrainIdea(0, "Sleeping");
+	std::cout << "<A> : " << A.getBrainIdea(0) << " is my first idea!" << std::endl; 
+	std::cout << "<B> : " << B.getBrainIdea(0) << " is my first idea!" << std::endl;
+	std::cout	<< std::endl;
+	
+	A = B;
+	std::cout << "<A> : " << A.getBrainIdea(0) << " is my first idea!" << std::endl; 
+	std::cout << "<B> : " << B.getBrainIdea(0) << " is my first idea!" << std::endl;
+	std::cout	<< std::endl;
+	
     return 0;
 }

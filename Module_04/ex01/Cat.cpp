@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 02:38:34 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 03:22:06 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ Cat	&Cat::operator=(Cat const &rhs) {
 Cat::~Cat(void) {
     std::cout << "[ Cat ] - Default destructor called" << std::endl;
 	delete this->_brain;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+void	Cat::setBrainIdea(int index, std::string const &idea) {
+	this->_brain->setIdea(index, idea);
+}
+
+std::string	&Cat::getBrainIdea(int index) {
+	return this->_brain->getIdea(index);
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
