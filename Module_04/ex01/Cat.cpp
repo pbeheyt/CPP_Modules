@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 23:07:06 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 02:38:34 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cat::Cat(Cat const &rhs) : Animal(rhs) {
 Cat	&Cat::operator=(Cat const &rhs) {
 	if (this!= &rhs) {
 		Animal::operator=(rhs);
-		this->_brain = new Brain();
+		this->_brain = new Brain(*rhs._brain);
 	}
 	return *this;
 }
