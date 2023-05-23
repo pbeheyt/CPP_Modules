@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 03:35:10 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 07:14:53 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Dog::Dog(Dog const &rhs) : AAnimal(rhs) {
 Dog	&Dog::operator=(Dog const &rhs) {
 	if (this!= &rhs) {
 		AAnimal::operator=(rhs);
+		delete this->_brain;
 		this->_brain = new Brain(*rhs._brain);
 	}
 	return *this;

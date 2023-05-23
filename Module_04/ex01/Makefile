@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/05/23 02:45:41 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/05/23 03:40:07 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= Animal
 
 CXX			= c++
 
-CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS		= main.cpp \
 			Animal.cpp \

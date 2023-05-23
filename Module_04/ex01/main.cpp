@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 07:08:41 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 03:30:57 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 07:13:05 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int main(void)
 				<< std::endl
 				<< std::endl;
 	
-	Dog A;
-	Dog B;
+	Cat A;
+	Cat B;
 	
 	std::cout	<< std::endl;
 	std::cout << "<A> : " << A.getBrainIdea(0) << " is my first idea!" << std::endl; 
@@ -60,6 +60,8 @@ int main(void)
 	std::cout	<< std::endl;
 	
 	A = B;
+	
+	std::cout	<< std::endl;
 	std::cout << "<A> : " << A.getBrainIdea(0) << " is my first idea!" << std::endl; 
 	std::cout << "<B> : " << B.getBrainIdea(0) << " is my first idea!" << std::endl;
 	std::cout	<< std::endl;
