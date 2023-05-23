@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 02:37:58 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/23 03:35:10 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ Dog	&Dog::operator=(Dog const &rhs) {
 Dog::~Dog(void) {
     std::cout << "[ Dog ] - Default destructor called" << std::endl;
 	delete this->_brain;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+void	Dog::setBrainIdea(int index, std::string const &idea) {
+	this->_brain->setIdea(index, idea);
+}
+
+std::string	&Dog::getBrainIdea(int index) {
+	return this->_brain->getIdea(index);
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
