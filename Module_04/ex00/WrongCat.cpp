@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 22:30:35 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 23:11:24 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ WrongCat::WrongCat(WrongCat const &rhs) : WrongAnimal(rhs) {
 
 WrongCat	&WrongCat::operator=(WrongCat const &rhs) {
 	if (this!= &rhs) {
-		this->_type = rhs._type;
+		WrongAnimal::operator=(rhs);
 	}
 	return *this;
 }

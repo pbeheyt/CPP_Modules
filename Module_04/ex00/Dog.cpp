@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 22:32:43 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 23:11:07 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog(Dog const &rhs) : Animal(rhs) {
 
 Dog	&Dog::operator=(Dog const &rhs) {
 	if (this!= &rhs) {
-		this->_type = rhs._type;
+		Animal::operator=(rhs);
 	}
 	return *this;
 }
