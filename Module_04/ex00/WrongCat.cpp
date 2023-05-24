@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:28:50 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:30:35 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ WrongCat::WrongCat(void) : WrongAnimal("WrongCat") {
 
 WrongCat::WrongCat(WrongCat const &rhs) : WrongAnimal(rhs) {
     std::cout << "[ WrongCat ] - Copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 WrongCat	&WrongCat::operator=(WrongCat const &rhs) {
 	if (this!= &rhs) {
-		WrongAnimal::operator=(rhs);
+		this->_type = rhs._type;
 	}
 	return *this;
 }

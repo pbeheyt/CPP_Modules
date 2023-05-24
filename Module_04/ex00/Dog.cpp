@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/21 22:26:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:32:43 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ Dog::Dog(void) : Animal("Dog") {
 
 Dog::Dog(Dog const &rhs) : Animal(rhs) {
     std::cout << "[ Dog ] - Copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 Dog	&Dog::operator=(Dog const &rhs) {
 	if (this!= &rhs) {
-		Animal::operator=(rhs);
+		this->_type = rhs._type;
 	}
 	return *this;
 }

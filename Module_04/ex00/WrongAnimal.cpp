@@ -20,14 +20,13 @@ WrongAnimal::WrongAnimal(std::string const &type) : _type(type) {
     std::cout << "[ WrongAnimal ] - Parameterized constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &rhs) {
+WrongAnimal::WrongAnimal(WrongAnimal const &rhs) : _type(rhs._type) {
     std::cout << "[ WrongAnimal ] - Copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &rhs) {
 	if (this!= &rhs) {
-		_type = rhs._type;
+		this->_type = rhs._type;
 	}
 	return *this;
 }
