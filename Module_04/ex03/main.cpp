@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 07:14:20 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 05:35:27 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 07:11:49 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,52 @@ int	main(void) {
 	delete bob;
 	delete me;
 	delete src;
+
+	std::cout	<< std::endl
+				<< std::endl
+				<< std::endl;
+				
+	ICharacter *A = new Character("Alain");
+	ICharacter *B = new Character("Bernard");
+	ICharacter *C = new Character("Christian");
+	IMateriaSource *src2 = new MateriaSource();
+	src2->learnMateria(new Ice());
+	src2->learnMateria(new Cure());	
+	std::cout << std::endl;
+
+	AMateria *m;
+	m = src2->createMateria("ice");
+	A->equip(m);
+	m = src2->createMateria("cure");
+	B->equip(m);
+	std::cout << std::endl;
+
+	A->use(0, *C);
+	B->use(0, *C);
+	std::cout << std::endl;
 	
+	ICharacter	*tmpChar;
+	tmpChar = A;
+	A = B;
+	delete tmpChar;
+	std::cout << std::endl;
+
+	A->use(0, *C);
+	B->use(0, *C);
+	std::cout << std::endl;
+	
+	// Character	cpyChar(*dynamic_cast<Character*>(A));
+	// cpyChar.use(0, *C);
+	// std::cout << std::endl;
+
+	ICharacter	*cpyChar = new Character(*dynamic_cast<Character*>(A));
+	cpyChar->use(0, *C);
+	std::cout << std::endl;
+	
+	delete A;
+	delete C;
+	delete cpyChar;
+	delete src2;
+
 	return 0;
 }
