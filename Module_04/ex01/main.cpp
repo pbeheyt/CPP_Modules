@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 07:08:41 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 04:35:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:06:01 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ int main(void)
 	std::cout << "<B> : " << B.getBrainIdea(0) << " is my first idea!" << std::endl;
 	std::cout << "[Brain A adr] - " << A.getBrainAdr() << std::endl;
 	std::cout << "[Brain B adr] - " << B.getBrainAdr() << std::endl;
+	std::cout	<< std::endl;
+
+	Cat C(A);
+	std::cout << "<C> : " << A.getBrainIdea(0) << " is my first idea!" << std::endl; 
 	std::cout	<< std::endl;
 	
     return 0;
