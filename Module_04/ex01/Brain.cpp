@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 03:34:18 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 04:32:13 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,8 @@ void	Brain::setIdea(int index, std::string const &idea) {
 
 std::string	&Brain::getIdea(int index) {
 	return this->_ideas[index];
+}
+
+Brain	*Brain::getAdr(void) {
+	return &(*this);
 }

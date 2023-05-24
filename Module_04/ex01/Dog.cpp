@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 07:13:18 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 04:37:56 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ void	Dog::setBrainIdea(int index, std::string const &idea) {
 
 std::string	&Dog::getBrainIdea(int index) {
 	return this->_brain->getIdea(index);
+}
+
+Brain	*Dog::getBrainAdr(void) {
+	return this->_brain->getAdr();
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/

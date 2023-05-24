@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 03:22:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 04:31:35 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Brain {
 
 		void		setIdea(int index, std::string const &idea);
 		std::string	&getIdea(int index);
+		Brain		*getAdr(void);
 
 	private:
 		std::string	_ideas[100];
