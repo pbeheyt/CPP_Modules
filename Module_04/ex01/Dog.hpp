@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 04:38:14 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:52:47 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
-
-class Brain;
 
 class Dog : public Animal {
 	public:
