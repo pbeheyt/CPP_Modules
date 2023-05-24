@@ -6,20 +6,18 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:13:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 04:06:57 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:56:30 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const &type) {
+AMateria::AMateria(std::string const &type) : _type(type) {
 	std::cout << "[ AMateria ] - Parameterized constructor called" << std::endl;
-	this->_type = type;
 }
 
-AMateria::AMateria(AMateria const &rhs) {
+AMateria::AMateria(AMateria const &rhs) : _type(rhs._type) {
 	std::cout << "[ AMateria ] - Copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 AMateria	&AMateria::operator=(const AMateria &rhs) {

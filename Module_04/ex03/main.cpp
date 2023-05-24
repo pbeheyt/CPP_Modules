@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 07:14:20 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 07:33:05 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 23:04:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(void) {
 	src->learnMateria(new Cure());	
 	ICharacter *me = new Character("me");
 	AMateria *tmp;
+	AMateria *tmp2;
 	
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
@@ -33,6 +34,8 @@ int	main(void) {
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+
+	tmp2 = tmp;
 	
 	ICharacter *bob = new Character("bob");
 	

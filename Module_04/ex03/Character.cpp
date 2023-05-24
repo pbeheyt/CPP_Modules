@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 07:52:16 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 23:06:47 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ Character::Character(std::string name) :  _name(name) {
     }
 }
 
-Character::Character(Character const &rhs) {
+Character::Character(Character const &rhs) : _name(rhs._name) {
 	std::cout << "[ Character ] - Copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++) {
-        this->_inventory[i] = NULL;
-    }
-	*this = rhs;
+		this->_inventory[i] = 
+			(rhs._inventory[i] != NULL) ? rhs._inventory[i]->clone() : NULL;
+	}
 }
 
 Character &Character::operator=(Character const &rhs) {

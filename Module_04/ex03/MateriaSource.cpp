@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 07:51:32 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 23:06:15 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ MateriaSource::MateriaSource(void) {
 MateriaSource::MateriaSource(MateriaSource const &rhs) {
 	std::cout << "[ MateriaSource ] - Copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++) {
-       this->_materia[i] = NULL;
-    }
-	*this = rhs;
+		this->_materia[i] = 
+			(rhs._materia[i] != NULL) ? rhs._materia[i]->clone() : NULL;
+	}
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &rhs) {
