@@ -17,7 +17,7 @@ WrongAnimal::WrongAnimal(void) : _type("WrongAnimal") {
 }
 
 WrongAnimal::WrongAnimal(std::string const &type) : _type(type) {
-    std::cout << "[ WrongAnimal ] - Default constructor called" << std::endl;
+    std::cout << "[ WrongAnimal ] - Parameterized constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &rhs) {
