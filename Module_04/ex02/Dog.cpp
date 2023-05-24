@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 04:46:33 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:24:33 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog(void) : AAnimal("Dog"), _brain(new Brain()) {
 
 Dog::Dog(Dog const &rhs) : AAnimal(rhs) {
     std::cout << "[ Dog ] - Copy constructor called" << std::endl;
-	*this = rhs;
+	this->_brain = new Brain(*rhs._brain);
 }
 
 Dog	&Dog::operator=(Dog const &rhs) {
