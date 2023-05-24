@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 07:14:20 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 07:11:49 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 07:33:05 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,6 @@ int	main(void) {
 	A->use(0, *C);
 	B->use(0, *C);
 	std::cout << std::endl;
-	
-	// Character	cpyChar(*dynamic_cast<Character*>(A));
-	// cpyChar.use(0, *C);
-	// std::cout << std::endl;
 
 	ICharacter	*cpyChar = new Character(*dynamic_cast<Character*>(A));
 	cpyChar->use(0, *C);
