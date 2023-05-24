@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 07:30:51 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 07:52:16 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Character &Character::operator=(Character const &rhs) {
 			if (this->_inventory[i]!= NULL) {
 				delete this->_inventory[i];
 			}
-			this->_inventory[i] = NULL;
 		}
 		for (int i = 0; i < 4; i++) {
 			this->_inventory[i] = 
@@ -64,7 +63,7 @@ void Character::equip(AMateria *m) {
 		return;
 	}
 	int i = 0;
-	while (i < 4 && this->_inventory[i]) {
+	while (i < 4 && this->_inventory[i] != NULL) {
 		i++;
 	}
 	if (i < 4) {
@@ -79,7 +78,7 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter &target) {
-	if (idx >= 0 && idx < 4 && this->_inventory[idx]) {
+	if (idx >= 0 && idx < 4 && this->_inventory[idx] != NULL) {
 		this->_inventory[idx]->use(target);
 	}
 }
