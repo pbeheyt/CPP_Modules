@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:48:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/23 03:35:51 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 04:46:44 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Dog : public AAnimal {
 	
 		void		setBrainIdea(int index, std::string const &idea);
 		std::string	&getBrainIdea(int index);
+		Brain		*getBrainAdr(void);
 
 	private:
 		Brain	*_brain;
