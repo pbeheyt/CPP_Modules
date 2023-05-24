@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 04:43:48 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:36:16 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ Animal::Animal(std::string const &type) : _type(type) {
     std::cout << "[ Animal ] - Parameterized constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &rhs) {
+Animal::Animal(Animal const &rhs) : _type(rhs._type) {
 	std::cout << "[ Animal ] - Copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 Animal	&Animal::operator=(Animal const &rhs) {

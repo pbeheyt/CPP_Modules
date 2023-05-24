@@ -6,24 +6,23 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 22:21:43 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:40:19 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal("Dog"), _brain(new Brain) {
+Dog::Dog(void) : Animal("Dog"), _brain(new Brain()) {
     std::cout << "[ Dog ] - Default constructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &rhs) : Animal(rhs) {
+Dog::Dog(Dog const &rhs) : Animal(rhs), _brain(new Brain(*rhs._brain)) {
     std::cout << "[ Dog ] - Copy constructor called" << std::endl;
-	this->_brain = new Brain(*rhs._brain);
 }
 
 Dog	&Dog::operator=(Dog const &rhs) {
 	if (this!= &rhs) {
-		Animal::operator=(rhs);
+		this->_type = rhs._type;
 		delete this->_brain;
 		this->_brain = new Brain(*rhs._brain);
 	}

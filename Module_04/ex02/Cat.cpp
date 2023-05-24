@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 22:24:22 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:45:48 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ Cat::Cat(void) : AAnimal("Cat"), _brain(new Brain()) {
     std::cout << "[ Cat ] - Default constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &rhs) : AAnimal(rhs) {
+Cat::Cat(Cat const &rhs) : AAnimal(rhs), _brain(new Brain(*rhs._brain)) {
     std::cout << "[ Cat ] - Copy constructor called" << std::endl;
-	this->_brain = new Brain(*rhs._brain);
 }
 
 Cat	&Cat::operator=(Cat const &rhs) {
 	if (this!= &rhs) {
-		AAnimal::operator=(rhs);
+		this->_type = rhs._type;
 		delete this->_brain;
 		this->_brain = new Brain(*rhs._brain);
 	}

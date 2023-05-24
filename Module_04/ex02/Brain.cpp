@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 04:45:32 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:44:52 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ Brain::Brain(void) {
 
 Brain::Brain(Brain const &rhs) {
     std::cout << "[ Brain ] - Copy constructor called" << std::endl;
-	*this = rhs;
+	for(int i = 0; i < 100; i++) {
+		this->_ideas[i] = rhs._ideas[i];
+	}
 }
 
 Brain	&Brain::operator=(Brain const &rhs) {

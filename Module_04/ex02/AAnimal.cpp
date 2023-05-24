@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 06:47:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 04:16:55 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 22:44:28 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ AAnimal::AAnimal(std::string const &type) : _type(type) {
     std::cout << "[ Animal ] - Parameterized constructor called" << std::endl;
 }
 
-AAnimal::AAnimal(AAnimal const &rhs) {
+AAnimal::AAnimal(AAnimal const &rhs) : _type(rhs._type) {
 	std::cout << "[ Animal ] - Copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 AAnimal	&AAnimal::operator=(AAnimal const &rhs) {
@@ -39,7 +38,7 @@ AAnimal::~AAnimal(void) {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 std::string const	&AAnimal::getType(void) const {
-	return _type;
+	return this->_type;
 }
 
 void	AAnimal::makeSound(void) const {
