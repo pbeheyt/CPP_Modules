@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 07:14:20 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/22 00:15:38 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/24 05:35:27 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,26 @@ int	main(void) {
 	me->equip(tmp);
 	
 	ICharacter *bob = new Character("bob");
+	
+	std::cout << std::endl;
 	me->use(0, *bob);
 	me->use(1, *bob);
-	
 	me->use(3, *bob);
+	std::cout << std::endl;
+	
 	delete tmp;
 	me->unequip(3);
 	me->use(3, *bob);
+	std::cout << std::endl;
 
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
+	me->use(3, *bob);
+	std::cout << std::endl;
 
 	delete bob;
 	delete me;
 	delete src;
+	
 	return 0;
 }
