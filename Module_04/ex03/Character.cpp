@@ -6,13 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 23:24:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/24 23:25:02 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/05/25 02:40:17 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string name) : _name(name) {
+Character::Character(std::string const &name) : _name(name) {
 	std::cout << "[ Character ] - Parameterized constructor called" << std::endl;
     for (int i = 0; i < 4; i++) {
         this->_inventory[i] = NULL;
