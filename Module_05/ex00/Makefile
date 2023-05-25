@@ -6,11 +6,11 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/05/25 07:24:56 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/05/25 08:10:02 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= InterBureaucrate
+NAME		= Bureaucrate
 
 CXX			= c++
 
