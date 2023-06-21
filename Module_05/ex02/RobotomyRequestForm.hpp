@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 21:41:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/21 05:24:59 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/21 06:26:22 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 		~RobotomyRequestForm(void);
 
-		void executeAction(Bureaucrat const &executor) const;
+		virtual void executeAction(Bureaucrat const &executor) const;
 };
 
 #endif // MODULE_05_EX02_ROBOTOMYREQUESTFORM_HPP_

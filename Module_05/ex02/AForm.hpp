@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/21 05:52:42 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/21 06:27:47 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class AForm {
 
 		void			beSigned(Bureaucrat const &bureaucrat);
 		void 			execute(Bureaucrat const &executor) const;
-		virtual void	form(Bureaucrat const &executor) const = 0;
+		virtual void	executeAction(Bureaucrat const &executor) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:
