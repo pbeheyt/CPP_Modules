@@ -6,7 +6,7 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/05/25 09:28:42 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/06/21 05:50:26 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g
 
 SRCS		= main.cpp \
 			Bureaucrat.cpp \
-			Form.cpp
+			AForm.cpp \
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp \
+			ShrubberyCreationForm.cpp
 
 OBJS		= $(SRCS:%.cpp=obj/%.o)
 

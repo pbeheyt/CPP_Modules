@@ -6,12 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/25 09:31:54 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/21 05:44:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("Unnamed"), _grade(150) {}
 
@@ -65,13 +65,23 @@ void	Bureaucrat::decrementGrade(void) {
 	}
 }
 
-void	Bureaucrat::signForm(Form &form) const {
+void	Bureaucrat::signForm(AForm &form) const {
 	try {
 		form.beSigned(*this);
-		std::cout << *this << " signed " << form << std::endl;
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
-	catch(const std::exception& e) {
-		std::cerr << *this << " couldn’t sign " << form << " because " << e.what() << std::endl;
+	catch (const std::exception &e) {
+		std::cerr << this->_name << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form) const {
+	try {
+		form.executeAction(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;;
+	}
+	catch (const std::exception &e) {
+		std::cerr << this->_name << " couldn’t execute " << form << " because " << e.what() << std::endl;
 	}
 }
 
