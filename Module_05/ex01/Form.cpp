@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/25 09:40:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/21 05:00:58 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Form::Form(std::string const &name, int const gradeSign, int const gradeExe) :
 }
 
 Form::Form(Form const &rhs) :
-	_name(rhs._name), _isSigned(false), _gradeSign (rhs._gradeSign), 
+	_name(rhs._name), _isSigned(_isSigned), _gradeSign (rhs._gradeSign), 
 	_gradeExe (rhs._gradeExe) {}
 
 Form &Form::operator=(Form const &rhs) {
@@ -40,23 +40,23 @@ std::string const	&Form::getName(void) const {
 	return this->_name;
 }
 
-bool				Form::IsSigned(void) const {
+bool	Form::IsSigned(void) const {
 	return this->_isSigned;
 }
 
-int					Form::getGradeSign(void) const {
+int	Form::getGradeSign(void) const {
 	return this->_gradeSign;
 }
 
-int					Form::getGradeExe(void) const {
+int	Form::getGradeExe(void) const {
 	return this->_gradeExe;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 void	Form::beSigned(Bureaucrat const &bureaucrat) {
-	if (this->IsSigned() == false) {
-		throw Form::GradeTooLowException();
+	if (this->_isSigned == true) {
+		throw Form::FormAlreadySignedException();
 	}
 	if (bureaucrat.getGrade() <= this->getGradeSign()) {
 		this->_isSigned = true;
