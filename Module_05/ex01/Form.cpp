@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/23 03:28:28 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/23 03:30:13 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	Form::beSigned(Bureaucrat const &bureaucrat) {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-std::ostream &operator<<(std::ostream &ofs, AForm const &rhs) {
+std::ostream &operator<<(std::ostream &ofs, Form const &rhs) {
 	ofs	<< rhs.getName() << std::endl
 		<< "[ FORM INFO ]"<< std::endl
 		<< " - Required grade to sign/execute : "
