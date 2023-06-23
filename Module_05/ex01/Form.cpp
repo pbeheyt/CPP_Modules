@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/21 05:00:58 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/23 03:28:28 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,12 @@ void	Form::beSigned(Bureaucrat const &bureaucrat) {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-std::ostream &operator<<(std::ostream &ofs, Form const &rhs) {
-	ofs	<< "Form [" << rhs.getName() << "] - " 
-		<< "Required grade to sign : " << rhs.getGradeSign() << " / to execute : "
-		<< rhs.getGradeExe() << " ("
-		<< (rhs.IsSigned() ? "signed" : "unsigned") << " form)" << std::flush;
+std::ostream &operator<<(std::ostream &ofs, AForm const &rhs) {
+	ofs	<< rhs.getName() << std::endl
+		<< "[ FORM INFO ]"<< std::endl
+		<< " - Required grade to sign/execute : "
+		<< rhs.getGradeSign() << "/" << rhs.getGradeExe() << std::endl
+		<< " - Status : " 
+		<< (rhs.IsSigned() ? "signed" : "unsigned") << " form" << std::endl;
 	return ofs;
 }
