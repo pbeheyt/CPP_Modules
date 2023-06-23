@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 21:41:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/21 06:03:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/23 03:11:52 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void ShrubberyCreationForm::executeAction(Bureaucrat const &executor) const {
     ofs << "      //       \\       /\\    " << std::endl;
     ofs << "     //         \\     /  \\   " << std::endl;
     ofs << "    //___________\\   /____\\  " << std::endl;
-    ofs << "        ||  ||          ||     " << std::endl;
-    ofs << "        ||  ||          ||     " << std::endl;
+    ofs << "        ||  ||         ||      " << std::endl;
+    ofs << "        ||  ||         ||      " << std::endl;
 }
 		

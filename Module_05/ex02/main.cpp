@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 06:59:49 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/21 06:44:20 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/23 03:19:27 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int main(void) {
     Bureaucrat jean("Jean", 150);
     Bureaucrat sylvain("Sylvain", 1);
 
+	std::cout << jean << std::endl;
+	std::cout << sylvain << std::endl;
+	std::cout << std::endl;
+	
 	std::cout << "---SCHRUB TEST---" << std::endl;
 	ShrubberyCreationForm shrub("field");
 	jean.executeForm(shrub);
@@ -39,7 +43,7 @@ int main(void) {
 	jean.signForm(robot);
 	sylvain.signForm(robot);
 	std::cout << std::endl;
-	jean.executeForm(shrub);
+	jean.executeForm(robot);
 	sylvain.executeForm(robot);
 	std::cout << std::endl;
 	

@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/21 05:20:15 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/23 03:28:03 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,11 @@ void	AForm::execute(const Bureaucrat &executor) const {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 std::ostream &operator<<(std::ostream &ofs, AForm const &rhs) {
-	ofs	<< "Form [" << rhs.getName() << "] - " 
-		<< "Required grade to sign : " << rhs.getGradeSign() << " / to execute : "
-		<< rhs.getGradeExe() << " ("
-		<< (rhs.IsSigned() ? "signed" : "unsigned") << " form)" << std::flush;
+	ofs	<< rhs.getName() << std::endl
+		<< "[ FORM INFO ]"<< std::endl
+		<< " - Required grade to sign/execute : "
+		<< rhs.getGradeSign() << "/" << rhs.getGradeExe() << std::endl
+		<< " - Status : " 
+		<< (rhs.IsSigned() ? "signed" : "unsigned") << " form" << std::endl;
 	return ofs;
 }
