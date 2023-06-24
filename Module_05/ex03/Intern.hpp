@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 04:21:13 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/24 09:57:06 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 10:00:31 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Intern {
 
 	class InvalidFormNameException : public std::exception {
 		public:
-			const char *what() const throw();
+			char const *what() const throw();
 	};
 };
 

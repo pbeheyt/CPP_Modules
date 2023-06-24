@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 04:21:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/24 09:57:39 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 10:00:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ AForm *Intern::makeForm(std::string const &formName, std::string const &target) 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-const char *Intern::InvalidFormNameException::what() const throw() {
+char const *Intern::InvalidFormNameException::what() const throw() {
 	return ("invalid form type");
 }
