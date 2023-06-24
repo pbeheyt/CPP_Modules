@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 21:41:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/23 03:11:52 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 09:15:12 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void ShrubberyCreationForm::executeAction(Bureaucrat const &executor) const {
 	std::ofstream ofs((this->getTarget() + "_shrubbery").c_str());
 
     if (!ofs) {
-		throw std::ofstream::failure("Failed to open the file.");
+		throw std::ofstream::failure("failed to open the file");
     }
 
     ofs << "          /\\                  " << std::endl;

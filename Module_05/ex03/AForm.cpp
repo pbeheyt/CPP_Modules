@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/24 07:44:07 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 09:29:10 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	AForm::beSigned(Bureaucrat const &bureaucrat) {
 	}
 }
 
-void	AForm::execute(const Bureaucrat &executor) const {
+void	AForm::execute(Bureaucrat const &executor) const {
 	if (this->_isSigned == false) {
 		throw AForm::FormNotSignedException();	
 	}
@@ -106,7 +106,7 @@ char const *AForm::FormNotSignedException::what() const throw() {
 
 std::ostream &operator<<(std::ostream &ofs, AForm const &rhs) {
 	ofs	<< rhs.getName() << std::endl
-		<< "[ FORM INFO ]"<< std::endl
+		<< "[ " << rhs.getName() << " ]"<< std::endl
 		<< " - Required grade to sign/execute : "
 		<< rhs.getGradeSign() << "/" << rhs.getGradeExe() << std::endl
 		<< " - Status : " 
