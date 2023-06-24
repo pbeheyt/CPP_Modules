@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 04:21:09 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/23 05:45:24 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 09:57:39 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ Intern &Intern::operator=(Intern const &rhs) {
 
 Intern::~Intern(void) {}
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
 AForm *Intern::makeForm(std::string const &formName, std::string const &target) const {
 	std::string listForm[3];
 
@@ -39,7 +41,7 @@ AForm *Intern::makeForm(std::string const &formName, std::string const &target) 
 	while (i < 3 && formName != listForm[i]) {
 		i++;
 	}
-	switch(i) {
+	switch (i) {
 		case 0:
 			std::cout << "Intern creates " << formName << std::endl;
 			return new PresidentialPardonForm(target);
@@ -54,3 +56,9 @@ AForm *Intern::makeForm(std::string const &formName, std::string const &target) 
 	}
 	return NULL;
 };
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+const char *Intern::InvalidFormNameException::what() const throw() {
+	return ("invalid form type");
+}
