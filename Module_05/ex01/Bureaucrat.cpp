@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/24 07:28:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 08:25:42 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	Bureaucrat::signForm(Form &form) const {
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
 	catch (const std::exception &e) {
-		std::cerr << this->_name << " couldn’t sign " << form.getName() << "because " << e.what() << std::endl;
+		std::cerr << this->_name << " couldn’t sign " << form << "because " << e.what() << std::endl;
 	}
 }
 
