@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/24 09:28:40 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 09:53:10 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ AForm::AForm(AForm const &rhs) :
 	_gradeExe (rhs._gradeExe) {}
 
 AForm &AForm::operator=(AForm const &rhs) {
-	if (this != &rhs) {}
+	(void)rhs;
 	return *this;
 }
 

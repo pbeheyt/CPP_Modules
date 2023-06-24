@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/24 08:36:11 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 09:53:23 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Form::Form(Form const &rhs) :
 	_gradeExe (rhs._gradeExe) {}
 
 Form &Form::operator=(Form const &rhs) {
-	if (this != &rhs) {}
+	(void)rhs;
 	return *this;
 }
 
