@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/23 03:30:13 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 08:20:28 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ Form::Form(void) : _name("Form"), _isSigned(false), _gradeSign (1), _gradeExe (1
 
 Form::Form(std::string const &name, int const gradeSign, int const gradeExe) :
 	_name(name), _isSigned(false), _gradeSign(gradeSign), _gradeExe(gradeExe) {
-	if (gradeSign < 1 || gradeExe < 1)
+	if (gradeSign < 1 || gradeExe < 1) {
 		throw Form::GradeTooHighException();
-	else if (gradeSign > 150 || gradeExe > 150)
+	} else if (gradeSign > 150 || gradeExe > 150) {
 		throw Form::GradeTooLowException();
+	}
 }
 
 Form::Form(Form const &rhs) :
-	_name(rhs._name), _isSigned(_isSigned), _gradeSign (rhs._gradeSign), 
+	_name(rhs._name), _isSigned(rhs._isSigned), _gradeSign (rhs._gradeSign), 
 	_gradeExe (rhs._gradeExe) {}
 
 Form &Form::operator=(Form const &rhs) {
@@ -63,6 +64,20 @@ void	Form::beSigned(Bureaucrat const &bureaucrat) {
 	} else {
 		throw Form::GradeTooLowException();
 	}
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+char const *Form::GradeTooHighException::what() const throw() {
+	return "the grade is too high!";
+}
+
+char const *Form::GradeTooLowException::what() const throw() {
+	return "the grade is too low!";
+}
+
+char const *Form::FormAlreadySignedException::what() const throw() {
+	return "the form is already signed!";
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
