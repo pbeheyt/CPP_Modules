@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/05/25 08:35:19 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 07:27:33 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,16 @@ void	Bureaucrat::decrementGrade(void) {
 	} else {
 		this->_grade++;
 	}
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+char const *Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Grade too high";
+}
+
+char const *Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Grade too low";
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/

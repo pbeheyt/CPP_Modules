@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/21 05:47:58 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 07:42:21 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,12 @@ class Bureaucrat {
 
 		class GradeTooHighException : public std::exception {
 			public:
-				char const *what() const throw() {
-					return "the grade is too high!";
-				}
+				char const *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
 			public:
-				char const *what() const throw() {
-					return "the grade is too low!";
-				}
+				char const *what() const throw();
 		};
 
 	private:

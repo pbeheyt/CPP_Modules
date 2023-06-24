@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/23 03:31:12 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 07:44:26 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,22 @@ class AForm {
 
 		class GradeTooHighException : public std::exception {
 			public:
-				char const *what() const throw() {
-					return "the grade is too high!";
-				}
+				char const *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
 			public:
-				char const *what() const throw() {
-					return "the grade is too low!";
-				}
+				char const *what() const throw();
 		};
 
 		class FormAlreadySignedException : public std::exception {
 			public:
-				char const *what() const throw() {
-					return "the form is already signed!";
-				}
+				char const *what() const throw();
 		};
 
 		class FormNotSignedException : public std::exception {
 			public:
-				char const *what() const throw() {
-					return "the form is not signed!";
-				}
+				char const *what() const throw();
 		};
 
 	private:

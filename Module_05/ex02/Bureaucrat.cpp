@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/23 03:21:49 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 07:42:46 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,16 @@ void	Bureaucrat::executeForm(AForm const &form) const {
 	catch (const std::exception &e) {
 		std::cerr << this->_name << " couldn’t execute " << form << "because " << e.what() << std::endl;
 	}
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+char const *Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Grade too high";
+}
+
+char const *Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Grade too low";
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/

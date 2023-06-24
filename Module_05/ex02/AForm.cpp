@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 07:01:14 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/23 03:28:03 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/24 07:40:23 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,24 @@ void	AForm::execute(const Bureaucrat &executor) const {
 	if (executor.getGrade() > this->getGradeExe()) {
 		throw AForm::GradeTooLowException();
 	}
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+char const *AForm::GradeTooHighException::what() const throw() {
+	return "the grade is too high!";
+}
+
+char const *AForm::GradeTooLowException::what() const throw() {
+	return "the grade is too low!";
+}
+
+char const *AForm::FormAlreadySignedException::what() const throw() {
+	return "the form is already signed!";
+}
+
+char const *AForm::FormNotSignedException::what() const throw() {
+	return "the form is not signed!";
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
