@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:32:58 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/26 14:56:14 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/26 15:48:09 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,15 @@ ScalarConverter::ScalarConverter(std::string const &input) : _input(input) {
             }
         }
     }
+}
+
+ScalarConverter::ScalarConverter(ScalarConverter const &rhs) :
+	_input(rhs._input), _charVal(rhs._charVal) , _intVal(rhs._intVal),
+	_floatVal(rhs._floatVal), _doubleVal(rhs._doubleVal), _type(rhs._type) {}
+
+ScalarConverter &ScalarConverter::operator=(ScalarConverter const &rhs) {
+	(void)rhs;
+	return *this;
 }
 
 ScalarConverter::~ScalarConverter(void) {}
@@ -153,6 +162,32 @@ double ScalarConverter::toDouble(void) const {
 			return this->_doubleVal;
 		default:
 			throw InvalidInputException();
+	}
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+void	ScalarConverter::convert(void) const {
+	std::cout << "./convert " << this->_input << std::endl;
+	try {
+		std::cout << "char: " << toChar() << std::endl;
+	} catch (std::exception const &e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		std::cout << "int: " << toInt() << std::endl;
+	} catch (std::exception const &e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		std::cout << "float: " << toFloat() << std::endl;
+	} catch (std::exception const &e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		std::cout << "double: " << toDouble() << std::endl;
+	} catch (std::exception const &e) {
+		std::cout << e.what() << std::endl;
 	}
 }
 

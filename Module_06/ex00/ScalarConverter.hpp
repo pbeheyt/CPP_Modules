@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:33:02 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/26 14:45:07 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/26 15:30:19 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ class ScalarConverter {
 		ScalarConverter &operator=(ScalarConverter const &rhs);
 		~ScalarConverter(void);
 
-		bool isValidFloat(float f) const;
-		bool isValidDouble(double d) const;
-
+		bool	isValidFloat(float f) const;
+		bool	isValidDouble(double d) const;
 		char	toChar(void) const;
 		int		toInt(void) const;
 		float	toFloat(void) const;
 		double	toDouble(void) const;
+
+		void	convert(void) const;
 
 		class InvalidInputException : public std::exception {
 			public:

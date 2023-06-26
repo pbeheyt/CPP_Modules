@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:32:55 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/26 11:02:33 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/26 15:31:54 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ int	main(int ac, char **av) {
 	} else {
 		try {
 			ScalarConverter input(av[1]);
+			input.convert();
 		}
 		catch (std::exception const &e) {
-			std::cerr << e.what() << std::endl;
+			std::cerr << "Error : "<< e.what() << std::endl;
 		}
 	}
 }
