@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:32:58 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/27 10:19:49 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/27 10:57:19 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ ScalarConverter &ScalarConverter::operator=(ScalarConverter const &rhs) {
 
 ScalarConverter::~ScalarConverter(void) {}
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+/* ************************************************************************** */
 
 bool ScalarConverter::isValidFloat(float f) const {
 	if (std::isnan(f) || std::isinf(f) || f > std::numeric_limits<int>::max()
@@ -165,7 +165,7 @@ double ScalarConverter::toDouble(void) const {
 	}
 }
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+/* ************************************************************************** */
 
 void	ScalarConverter::convert(void) const {
 	std::cout << "./convert " << this->_input << std::endl;
@@ -211,7 +211,7 @@ void	ScalarConverter::convert(void) const {
 	}
 }
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+/* ************************************************************************** */
 
 char const *ScalarConverter::InvalidInputException::what(void) const throw() {
 	return "invalid input";
