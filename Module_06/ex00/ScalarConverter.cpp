@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:32:58 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/27 10:05:29 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/27 10:19:49 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ ScalarConverter::ScalarConverter(std::string const &input) : _input(input) {
         if (*endPtr == '\0') {
             _type = intType;
         } else {
-            _floatVal = static_cast<float>(strtod(input.c_str(), &endPtr));
-            if (*endPtr == '\0') {
+            _floatVal = (strtof(input.c_str(), &endPtr));
+            if (*endPtr == 'f') {
                 _type = floatType;
             } else {
                 _doubleVal = strtod(input.c_str(), &endPtr);
@@ -170,12 +170,18 @@ double ScalarConverter::toDouble(void) const {
 void	ScalarConverter::convert(void) const {
 	std::cout << "./convert " << this->_input << std::endl;
 	try {
-		std::cout << "char: " << toChar() << std::endl;
+		std::cout << "char: ";
+		char c = toChar();
+		
+		std::cout << "'" << c << "'" <<std::endl;
 	} catch (std::exception const &e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		std::cout << "int: " << toInt() << std::endl;
+		std::cout << "int: ";
+		int i = toInt();
+		
+		std::cout << i << std::endl;
 	} catch (std::exception const &e) {
 		std::cout << e.what() << std::endl;
 	}
