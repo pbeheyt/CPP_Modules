@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:32:58 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/26 15:48:09 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/27 10:05:29 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,19 +91,19 @@ char ScalarConverter::toChar(void) const {
 			}
 		case floatType:
 			c = static_cast<char>(this->_floatVal);
-			if (!std::isprint(c)) {
-				throw ScalarConverter::NonDisplayableException();
-			} else if (!isValidFloat(this->_floatVal)) {
+			if (!isValidFloat(this->_floatVal)) {
 				throw ScalarConverter::ImpossibleConversionException();
+			} else if (!std::isprint(c)) {
+				throw ScalarConverter::NonDisplayableException();
 			} else {
 				return c;
 			}
 		case doubleType:
 			c = static_cast<char>(this->_doubleVal);
-			if (!std::isprint(c)) {
-				throw ScalarConverter::NonDisplayableException();
-			} else if (!isValidDouble(this->_doubleVal)) {
+			if (!isValidDouble(this->_doubleVal)) {
 				throw ScalarConverter::ImpossibleConversionException();
+			} else if (!std::isprint(c)) {
+				throw ScalarConverter::NonDisplayableException();
 			} else {
 				return c;
 			}
@@ -180,12 +180,26 @@ void	ScalarConverter::convert(void) const {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		std::cout << "float: " << toFloat() << std::endl;
+		std::cout << "float: ";
+		float f = toFloat();
+		
+		std::cout << f;
+		if (f == static_cast<int>(f)) {
+			std::cout << ".0";
+		}
+		std::cout << "f" << std::endl;	
 	} catch (std::exception const &e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		std::cout << "double: " << toDouble() << std::endl;
+		std::cout << "double: ";
+		float d = toDouble();
+		
+		std::cout << d;
+		if (d == static_cast<int>(d)) {
+			std::cout << ".0";
+		}
+		std::cout << std::endl;	
 	} catch (std::exception const &e) {
 		std::cout << e.what() << std::endl;
 	}
