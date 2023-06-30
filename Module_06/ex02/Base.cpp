@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 11:35:34 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/30 12:21:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/06/30 12:22:45 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,15 @@ void Base::identify(Base *p) {
 void Base::identify(Base &p) {
 	try {
 		std::cout << "reference belongs to class: ";
-		if (dynamic_cast<A*>(&p))
+		if (dynamic_cast<A*>(&p)) {
 			std::cout << "A" << std::endl;
-		else if (dynamic_cast<B*>(&p))
+		}
+		else if (dynamic_cast<B*>(&p)) {
 			std::cout << "B" << std::endl;
-		else if (dynamic_cast<C*>(&p))
+		}
+		else if (dynamic_cast<C*>(&p)) {
 			std::cout << "C" << std::endl;
+		}
 	} catch (std::exception const &e) {
 		std::cerr << e.what() << std::endl;
 	}
