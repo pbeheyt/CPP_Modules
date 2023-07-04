@@ -6,9 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:30:30 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/07/03 15:32:42 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/04 09:48:12 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef MODULE_07_EX00_WHATEVER_HPP_
+#define MODULE_07_EX00_WHATEVER_HPP_
 
 #include <iostream>
 
@@ -30,3 +33,5 @@ template <typename T>
 T const &max(T const &a, T const &b) {
 	return (a > b) ? a : b;
 }
+
+#endif  // MODULE_07_EX00_WHATEVER_HPP_
