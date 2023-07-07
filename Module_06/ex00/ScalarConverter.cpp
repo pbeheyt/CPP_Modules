@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:32:58 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/07/07 18:13:52 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/07 20:35:49 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,29 @@ ScalarConverter::ScalarConverter(std::string const &input) : _input(input) {
             this->_type = charType;
         }
     } else {
-        char *endPtr;
+        long	nbl;
+        double	nbd;
+		char	*endPtr;
         
-		this->_intVal = strtol(input.c_str(), &endPtr, 10);
-        if (*endPtr == '\0') {
-            this->_type = intType;
+		nbl = strtol(input.c_str(), &endPtr, 10);
+		if (*endPtr == '\0') {
+			if (isValidInt(nbl)) {
+				this->_intVal = static_cast<int>(nbl);
+				this->_type = intType;
+			} else {
+				throw ScalarConverter::InvalidInputException();
+			}
         } else {
-            this->_floatVal = strtof(input.c_str(), &endPtr);
-            if (*endPtr == 'f') {
+			nbd = strtof(input.c_str(), &endPtr);
+            if (*endPtr == 'f' && *(endPtr + 1) == '\0') {
+				this->_floatVal = static_cast<float>(nbd);
                 this->_type = floatType;
-            } else {
-                this->_doubleVal = strtod(input.c_str(), &endPtr);
-                if (*endPtr == '\0') {
-                   this->_type = doubleType;
-                } else {
-                    throw ScalarConverter::InvalidInputException();
-                }
-            }
+            } else if (*endPtr == '\0') {
+				this->_doubleVal = static_cast<double>(nbd);
+				this->_type = doubleType;
+			} else {
+				throw ScalarConverter::InvalidInputException();
+			}
         }
     }
 }
@@ -87,7 +93,9 @@ char ScalarConverter::toChar(void) const {
 			return this->_charVal;
 		case intType:
 			c = static_cast<char>(this->_intVal);
-			if (!std::isprint(c)) {
+			if (!isValidChar(this->_intVal)) {
+				throw ScalarConverter::ImpossibleConversionException();
+			} else if (!std::isprint(c)) {
 				throw ScalarConverter::NonDisplayableException();
 			} else {
 				return c;
