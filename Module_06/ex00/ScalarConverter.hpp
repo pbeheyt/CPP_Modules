@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:33:02 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/26 15:30:19 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/06 19:46:40 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class ScalarConverter {
 		ScalarConverter &operator=(ScalarConverter const &rhs);
 		~ScalarConverter(void);
 
-		bool	isValidFloat(float f) const;
-		bool	isValidDouble(double d) const;
+		bool	isValidChar(double d) const;
+		bool	isValidInt(double d) const;
 		char	toChar(void) const;
 		int		toInt(void) const;
 		float	toFloat(void) const;

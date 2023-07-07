@@ -6,37 +6,38 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 07:32:58 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/27 10:57:19 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/07 18:13:52 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter(std::string const &input) : _input(input) {
-    if (input.empty())
+    if (input.empty()) {
         throw ScalarConverter::InvalidInputException();
+	}
     if (input.size() == 1) {
         if (isdigit(input[0])) {
-            _intVal = atoi(input.c_str());
-            _type = intType;
+        	this->_intVal = atoi(input.c_str());
+			this->_type = intType;
         } else {
-            _charVal = input[0];
-            _type = charType;
+            this->_charVal = input[0];
+            this->_type = charType;
         }
     } else {
         char *endPtr;
         
-		_intVal = strtol(input.c_str(), &endPtr, 10);
+		this->_intVal = strtol(input.c_str(), &endPtr, 10);
         if (*endPtr == '\0') {
-            _type = intType;
+            this->_type = intType;
         } else {
-            _floatVal = (strtof(input.c_str(), &endPtr));
+            this->_floatVal = strtof(input.c_str(), &endPtr);
             if (*endPtr == 'f') {
-                _type = floatType;
+                this->_type = floatType;
             } else {
-                _doubleVal = strtod(input.c_str(), &endPtr);
+                this->_doubleVal = strtod(input.c_str(), &endPtr);
                 if (*endPtr == '\0') {
-                    _type = doubleType;
+                   this->_type = doubleType;
                 } else {
                     throw ScalarConverter::InvalidInputException();
                 }
@@ -58,17 +59,19 @@ ScalarConverter::~ScalarConverter(void) {}
 
 /* ************************************************************************** */
 
-bool ScalarConverter::isValidFloat(float f) const {
-	if (std::isnan(f) || std::isinf(f) || f > std::numeric_limits<int>::max()
-		|| f < std::numeric_limits<int>::min()) {
+bool ScalarConverter::isValidChar(double d) const {
+	if (std::isnan(d) || std::isinf(d) 
+		|| d > std::numeric_limits<char>::max()
+		|| d < std::numeric_limits<char>::min()) {
 			return false;
 	} else {
 		return true;
 	}
 }
 
-bool ScalarConverter::isValidDouble(double d) const {
-	if (std::isnan(d) || std::isinf(d) || d > std::numeric_limits<int>::max()
+bool ScalarConverter::isValidInt(double d) const {
+	if (std::isnan(d) || std::isinf(d) 
+		|| d > std::numeric_limits<int>::max()
 		|| d < std::numeric_limits<int>::min()) {
 			return false;
 	} else {
@@ -91,7 +94,7 @@ char ScalarConverter::toChar(void) const {
 			}
 		case floatType:
 			c = static_cast<char>(this->_floatVal);
-			if (!isValidFloat(this->_floatVal)) {
+			if (!isValidChar(this->_floatVal)) {
 				throw ScalarConverter::ImpossibleConversionException();
 			} else if (!std::isprint(c)) {
 				throw ScalarConverter::NonDisplayableException();
@@ -100,7 +103,7 @@ char ScalarConverter::toChar(void) const {
 			}
 		case doubleType:
 			c = static_cast<char>(this->_doubleVal);
-			if (!isValidDouble(this->_doubleVal)) {
+			if (!isValidChar(this->_doubleVal)) {
 				throw ScalarConverter::ImpossibleConversionException();
 			} else if (!std::isprint(c)) {
 				throw ScalarConverter::NonDisplayableException();
@@ -119,13 +122,13 @@ int ScalarConverter::toInt(void) const {
 		case intType:
 			return this->_intVal;
 		case floatType:
-			if (!isValidFloat(this->_floatVal)) {
+			if (!isValidInt(this->_floatVal)) {
 				throw ScalarConverter::ImpossibleConversionException();
 			} else {
 				return static_cast<int>(this->_floatVal);
 			}
 		case doubleType:
-			if (!isValidDouble(this->_doubleVal)) {
+			if (!isValidInt(this->_doubleVal)) {
 				throw ScalarConverter::ImpossibleConversionException();
 			} else {
 				return static_cast<int>(this->_doubleVal);
