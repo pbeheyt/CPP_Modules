@@ -6,13 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:36:23 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/27 11:53:02 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/07 18:16:11 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-int main() {
+int main(void) {
     Data data;
     data.nb = 42;
     data.raw = "Hello, World!";
