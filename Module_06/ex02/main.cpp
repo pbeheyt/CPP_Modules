@@ -6,14 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 11:55:12 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/30 12:20:16 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/07 18:52:34 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
 int main(void) {
-    srand(time(NULL));
 
 
 	Base base;

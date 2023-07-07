@@ -6,18 +6,19 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 11:35:34 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/06/30 12:22:45 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/07 18:54:22 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base::Base() {};
+Base::Base(void) {};
 
-Base::~Base() {};
+Base::~Base(void) {};
 
 Base	*Base::generate(void) {
 	std::cout << "generated class: ";
+	srand(time(NULL));
 	switch (rand() % 3) {
 		case 0:
 			std::cout << "A" << std::endl;
@@ -33,15 +34,15 @@ Base	*Base::generate(void) {
 	}
 }
 
-void Base::identify(Base *p) {
+void Base::identify(Base *ptr) {
 	std::cout << "pointer belongs to class: ";
-	if (dynamic_cast<A*>(p)) {
+	if (dynamic_cast<A*>(ptr)) {
 		std::cout << "A" << std::endl;
 	}
-	else if (dynamic_cast<B*>(p)) {
+	else if (dynamic_cast<B*>(ptr)) {
 		std::cout << "B" << std::endl;
 	}
-	else if (dynamic_cast<C*>(p)) {
+	else if (dynamic_cast<C*>(ptr)) {
 		std::cout << "C" << std::endl;
 	}
 	else {
@@ -50,16 +51,16 @@ void Base::identify(Base *p) {
 
 }
 
-void Base::identify(Base &p) {
+void Base::identify(Base &ref) {
 	try {
 		std::cout << "reference belongs to class: ";
-		if (dynamic_cast<A*>(&p)) {
+		if (dynamic_cast<A*>(&ref)) {
 			std::cout << "A" << std::endl;
 		}
-		else if (dynamic_cast<B*>(&p)) {
+		else if (dynamic_cast<B*>(&ref)) {
 			std::cout << "B" << std::endl;
 		}
-		else if (dynamic_cast<C*>(&p)) {
+		else if (dynamic_cast<C*>(&ref)) {
 			std::cout << "C" << std::endl;
 		}
 	} catch (std::exception const &e) {
