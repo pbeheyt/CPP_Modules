@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 08:12:00 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/07/08 16:16:01 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/08 16:29:58 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,30 @@ int main(void) {
 
     return 0;
 }
+
+/*
+class Awesome {
+    public:
+        Awesome() : _n(42) {return;};
+        int get() const {return this->_n;};
+
+    private:
+        int    _n;
+};
+
+std::ostream & operator<<(std::ostream &o, Awesome const &rhs) {o << rhs.get(); return o;}
+
+template<typename T>
+void print (T const &x) {std::cout << x << std::endl; return;}
+
+int main() {
+    int tab[] = {0,1,2,3,4};
+
+    Awesome tab2[5];
+
+    iter (tab, 5, print);
+    iter (tab2, 5, print);
+
+    return 0;
+}
+*/
