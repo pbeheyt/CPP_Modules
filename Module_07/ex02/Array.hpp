@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 08:51:46 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/07/04 10:13:10 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/08 17:05:00 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 template <typename T>
 class Array {
 	public:
-		Array(void) : _size(0), _array(new T[0]) {}
+		Array(void) : _size(0), _array(NULL) {}
 		
 		Array(unsigned int n) : _size(n), _array(new T[n]) {}
 		
@@ -32,7 +32,7 @@ class Array {
 		
 		Array &operator=(Array const &rhs) {
 			if (this != &rhs) {
-				delete[] this->_array;
+				this->~Array();
 				this->_size = rhs._size;
 				this->_array = new T[rhs._size];
 				for (unsigned int i = 0; i < this->_size; i++) {
@@ -43,7 +43,9 @@ class Array {
 		}
 		
 		~Array(void) {
-			delete[] this->_array;
+			if (this->_array != NULL) {
+				delete[] this->_array;
+			}
 		}
 
 		T &operator[](unsigned int idx) {
@@ -60,7 +62,7 @@ class Array {
 		class OutOfRangeException : public std::exception {
 			public:
 				char const *what(void) const throw() {
-					return "Element is out of range of array";	
+					return "Element is out of range";	
 				}
 		};
 
