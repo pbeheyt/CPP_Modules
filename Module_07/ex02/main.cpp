@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 09:36:58 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/07/08 17:28:14 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/07/08 17:35:32 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 int main(void)
 {
     try {
-        Array<int> emptyArray; // Creation of an empty array
         Array<int> intArray(5); // Creation of an array of 5
-
-        for (unsigned int i = 0; i < intArray.size(); ++i) {
+		
+		for (unsigned int i = 0; i < intArray.size(); ++i) {
         	intArray[i] = i + 1;
 		}
 
@@ -56,10 +55,14 @@ int main(void)
         try {
             std::cout << intArray[10] << std::endl;
         } catch (std::exception const &e) {
-            std::cout << e.what() << std::endl;
+            std::cout << "Error: " << e.what() << std::endl;
         }
-    } catch (std::exception const &e) {
-        std::cout << "Error : " << e.what() << std::endl;
+		
+        Array<int> emptyArray; // Creation of an empty array
+		std::cout << emptyArray[0] << std::endl; // Invalid access test
+		
+	} catch (std::exception const &e) {
+        std::cout << "Error: " << e.what() << std::endl;
     }
 
     return 0;
