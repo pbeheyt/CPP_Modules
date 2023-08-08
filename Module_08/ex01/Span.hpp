@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 20:46:40 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/03 21:42:50 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/08 16:52:52 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ class Span {
 		class FullContainerException : public std::exception {
 			public:
 				char const *what() const throw() {
-					return "Container full";
+					return "Container is full";
 				}
 		};
 
 		class EmptyContainerException : public std::exception {
 			public:
 				char const *what() const throw() {
-					return "Container is empty";
+					return "Too few values to calculate distance";
 				}
 		};
 
 		private:
 			std::vector<int>	_vector;
 			unsigned int		_size;
-}
+};

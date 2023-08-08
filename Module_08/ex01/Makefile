@@ -6,17 +6,18 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/08/03 19:35:55 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/08/08 16:54:26 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= easyfind
+NAME		= Span
 
 CXX			= c++
 
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g
 
-SRCS		= main.cpp
+SRCS		= main.cpp \
+			Span.cpp
 
 OBJS		= $(SRCS:%.cpp=obj/%.o)
 
