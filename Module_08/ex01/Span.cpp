@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 21:27:02 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/08 16:54:08 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:01:13 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void Span::addNumber(std::vector<int>::iterator const &begin, std::vector<int>::
 
 unsigned int Span::shortestSpan(void) const {
     if (this->_vector.size() <= 1) {
-        throw EmptyContainerException();
+        throw InvalidSpanDistanceException();
     }
     std::vector<int> sortedVector = this->_vector;
     std::sort(sortedVector.begin(), sortedVector.end());
@@ -64,7 +64,7 @@ unsigned int Span::shortestSpan(void) const {
 
 unsigned int Span::longestSpan(void) const {
     if (this->_vector.size() <= 1) {
-        throw EmptyContainerException();
+        throw InvalidSpanDistanceException();
     }
     std::vector<int> sortedVector = this->_vector;
     std::sort(sortedVector.begin(), sortedVector.end());

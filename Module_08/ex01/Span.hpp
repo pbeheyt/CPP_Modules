@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 20:46:40 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/08 16:52:52 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:01:01 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Span {
 				}
 		};
 
-		class EmptyContainerException : public std::exception {
+		class InvalidSpanDistanceException : public std::exception {
 			public:
 				char const *what() const throw() {
 					return "Too few values to calculate distance";
