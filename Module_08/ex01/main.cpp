@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:51:32 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/08 17:08:22 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/10 19:12:02 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(void) {
     } catch (std::exception const &e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try {
         Span sp(10);
@@ -40,6 +41,19 @@ int main(void) {
     } catch (std::exception const &e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
+	
+	try {
+        Span sp(10000);
+        for (int i = 0; i < 10000; ++i) {
+			sp.addNumber(i);
+		}
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+    } catch (std::exception const &e) {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+    std::cout << std::endl;
 
     try {
         Span sp(3);
@@ -50,6 +64,7 @@ int main(void) {
     } catch (std::exception const &e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try {
         Span sp(5);
@@ -59,6 +74,7 @@ int main(void) {
     } catch (std::exception const &e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     return 0;
 }
