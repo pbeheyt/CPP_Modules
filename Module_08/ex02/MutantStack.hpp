@@ -6,14 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 22:11:02 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/10 19:25:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/10 22:17:44 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODULE_08_EX02_MUTANTSTACK_HPP_
 #define MODULE_08_EX02_MUTANTSTACK_HPP_
 
-#include <iostream>
 #include <stack>
 #include <deque>
 

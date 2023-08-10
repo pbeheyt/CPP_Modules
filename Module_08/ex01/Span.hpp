@@ -6,14 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 20:46:40 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/08 22:08:08 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/10 22:18:19 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODULE_08_EX01_SPAN_HPP_
 #define MODULE_08_EX01_SPAN_HPP_
 
-#include <iostream>
 #include <vector>
 #include <algorithm>
 

@@ -6,11 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 00:43:29 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/10 19:42:39 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/10 22:18:10 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <iostream>
 #include <list>
 
 int main() {

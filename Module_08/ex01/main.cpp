@@ -6,11 +6,12 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:51:32 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/10 22:15:30 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/10 22:18:32 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <iostream>
 
 int main(void) {
     try {
