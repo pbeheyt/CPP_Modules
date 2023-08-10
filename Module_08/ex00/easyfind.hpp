@@ -6,15 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 19:17:00 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/03 19:37:57 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/10 21:33:39 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODULE_08_EX00_EASYFIND_HPP_
 #define MODULE_08_EX00_EASYFIND_HPP_
 
-#include <iostream>
-#include <vector>
 #include <algorithm>
 
 class ElementNotFoundException : public std::exception {

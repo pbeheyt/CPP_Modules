@@ -6,11 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 19:36:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/03 20:01:34 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/10 21:33:45 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+#include <iostream>
+#include <vector>
 
 int main(void) {
     try {
