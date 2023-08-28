@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:17:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/28 04:25:42 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/28 04:32:34 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &rhs) {
 	*this = rhs;
 }
 
-BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &rhs) {
+BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs) {
 	if (this != &rhs) {
 		this->_exchangeRates = rhs._exchangeRates;
 	}
 	return *this;
 }
 
-BitcoinExchange::~BitcoinExchange(){};
+BitcoinExchange::~BitcoinExchange() {};
