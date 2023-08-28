@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:19:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/28 04:25:52 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/28 21:21:21 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class BitcoinExchange {
 		BitcoinExchange &operator=(BitcoinExchange const &rhs);
 		~BitcoinExchange(void);
 
-		bool	ValidateValue(double const &rate) const;
-		bool	ValidateDate(std::string &date) const;
+		bool	IsValidateRate(double const &rate) const;
+		bool	IsValidateDate(std::string &date) const;
 		void	PrintMap(void);
 		void	ProcessInput(std::string const &filename);
 		double	GetExchangeRate(std::string const &date) const;
