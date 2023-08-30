@@ -6,32 +6,44 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:17:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/29 05:49:53 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/30 02:40:00 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
-BitcoinExchange::BitcoinExchange(std::string const &filePath) {
-    std::ifstream file(filePath.c_str());
-    if (!file) {
-        std::cerr << "Error: could not open file." << std::endl;
-        return;
-    }
+BitcoinExchange::BitcoinExchange(const std::string &filePath) {
+	
+	std::ifstream ifs(filePath.c_str());
+	if (!ifs.is_open()) {
+		throw std::runtime_error("could not open file.");
+	}
+	
+	std::string line;
+	std::getline(ifs, line); // skip header
+	if (line != "date,exchange_rate") {
+		throw std::runtime_error("Invalid header");
+	}
+	
+	while (getline(ifs, line)) {
+   		std::istringstream	iss(line);
+		std::string			date;
+		double				rate;
 
-    std::string line;
-    while (std::getline(file, line)) {
-        std::string date;
-        float value;
-        char separator;
-
-        std::istringstream iss(line);
-        if (iss >> date >> separator >> value && separator == '|' && value >= 0 && value <= 1000) {
-            _exchangeRates[date] = value;
-        }
-    }
+		std::getline(iss, date, ',');
+		iss >> rate;
+		if (!date.empty() && iss && (iss.peek() == EOF || iss.peek() == '\n')
+				&& IsValidDate(date)) {
+			this->_exchangeRates[date] = rate;
+		} else {
+			std::cerr << "Error: format in database =>"  << date << std::endl;
+		}
+	}
+	
+	ifs.close();
 }
+
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &rhs) {
 	*this = rhs;
@@ -47,7 +59,11 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs) {
 BitcoinExchange::~BitcoinExchange() {};
 
 bool	BitcoinExchange::IsValidValue(double const &value) const {
-	if (value < 0 || value > 1000) {
+	if (value < 0) {
+		std::cerr << "Error: not a positive number." << std::endl;
+		return false;
+	} else if (value > 1000) {
+		std::cerr << "Error: too large a number." << std::endl;
 		return false;
 	}
 	return true;
@@ -91,15 +107,17 @@ bool	BitcoinExchange::IsValidDate(std::string &date) const {
     }
 }
 
-double	BitcoinExchange::GetExchangeRate(std::string const &date) const {
+bool	BitcoinExchange::GetExchangeRate(std::string const &date) {
 	std::map<std::string, double>::const_iterator it;
 	it = this->_exchangeRates.lower_bound(date);
 	if (it != _exchangeRates.end()) {
-		return it->second;
+		this->_rate = it->second;
+		return true;
 	} else if (!_exchangeRates.empty()) {
-		return (--it)->second;
+		this->_rate = (--it)->second;
+		return true;
 	}
-	return (-1);
+	return false;
 }
 
 void	BitcoinExchange::Execute(std::string const	&filePath) {
@@ -107,41 +125,38 @@ void	BitcoinExchange::Execute(std::string const	&filePath) {
 	std::string		line;
 
 	if (!ifs.is_open()) {
-        throw std::runtime_error("Error: Failed to open file.");
+        throw std::runtime_error("could not open file.");
     }
 
 	std::getline(ifs, line);
 	if (line != "date | value") {
-    	throw std::runtime_error("Error: Invalid file header.");
+    	throw std::runtime_error("invalid file header.");
 	}
 	
 	while (getline(ifs, line)) {
 		std::string			date;
 		char				del;
 		double				value;
-		double				rate;
    		std::istringstream	iss(line);
 
 		if (!(iss >> date >> del >> value)) {
-			std::cerr << "Error: parsing\nLine " << line <<  std::endl;
+			std::cerr << "Error: bad input => " << date <<  std::endl;
 			continue;
 		}
 		if (!IsValidDate(date)) {
-			std::cerr << "Error: invalid date\nLine " << line << std::endl;
+			std::cerr << "Error: bad input => " << date << std::endl;
 			continue;
 		}
 		if (!IsValidValue(value)) {
-			std::cerr << "Error: invalid range value [1-1000]\nLine " << line << std::endl;
 			continue;
 		}
-		rate = GetExchangeRate(date);
-		if (rate == -1) {
-			std::cerr << "Error: exchange rate\nLine " << line << std::endl;
+		if (!GetExchangeRate(date)) {
+			std::cerr << "Error: bad input => " << date << std::endl;
 			continue;
 		}
 		// if (!ValidateSpace(line)) {
 		// 	std::cerr << "Error space not good format : " << line << std::endl;
 		// }
-		std::cout << date << " => " << value << " = " << value * rate << std::endl;
+		std::cout << date << " => " << value << " = " << value * this->_rate << std::endl;
 	}
 }

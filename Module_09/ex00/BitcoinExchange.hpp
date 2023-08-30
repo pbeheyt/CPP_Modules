@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:19:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/29 05:49:48 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/08/30 02:19:18 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ class BitcoinExchange {
 
 		bool	IsValidValue(double const &value) const;
 		bool	IsValidDate(std::string &date) const;
+		bool	GetExchangeRate(std::string const &date);
 		void	Execute(std::string const	&filePath);
-		double	GetExchangeRate(std::string const &date) const;
 		// bool	ValidateSpace(std::string const &line) const;
 	
 	private:
-		std::map<std::string, double> _exchangeRates;
+		std::map<std::string, double>	_exchangeRates;
+		double							_rate;
 };
 
 #endif  // _MODULE_09_EX00_BITCOINEXCHANGE_HPP_
