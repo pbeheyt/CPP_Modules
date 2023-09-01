@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:17:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/08/30 02:40:00 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/01 03:34:09 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ BitcoinExchange::BitcoinExchange(const std::string &filePath) {
 	}
 	
 	std::string line;
-	std::getline(ifs, line); // skip header
+	std::getline(ifs, line);
 	if (line != "date,exchange_rate") {
 		throw std::runtime_error("Invalid header");
 	}
@@ -33,14 +33,13 @@ BitcoinExchange::BitcoinExchange(const std::string &filePath) {
 
 		std::getline(iss, date, ',');
 		iss >> rate;
-		if (!date.empty() && iss && (iss.peek() == EOF || iss.peek() == '\n')
-				&& IsValidDate(date)) {
+		if (!date.empty() && IsValidDate(date)
+			&& iss && (iss.peek() == EOF || iss.peek() == '\n')) {
 			this->_exchangeRates[date] = rate;
 		} else {
 			std::cerr << "Error: format in database =>"  << date << std::endl;
 		}
 	}
-	
 	ifs.close();
 }
 
@@ -154,9 +153,6 @@ void	BitcoinExchange::Execute(std::string const	&filePath) {
 			std::cerr << "Error: bad input => " << date << std::endl;
 			continue;
 		}
-		// if (!ValidateSpace(line)) {
-		// 	std::cerr << "Error space not good format : " << line << std::endl;
-		// }
 		std::cout << date << " => " << value << " = " << value * this->_rate << std::endl;
 	}
 }
