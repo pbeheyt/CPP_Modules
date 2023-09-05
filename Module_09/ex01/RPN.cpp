@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 03:39:45 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/01 03:41:04 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/05 03:38:22 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ double RPNCalculator::evaluate(std::string const &expression) {
 
     std::string token;
     while (iss >> token) {
-        if (token == "+" || token == "-" || token == "*" || token == "/") {
+		if (token == "+" || token == "-" || token == "*" || token == "/") {
             if (operandStack.size() < 2) {
                 std::cerr << "Error: Insufficient operands for operator " << token << std::endl;
                 return 0.0;
@@ -49,10 +49,13 @@ double RPNCalculator::evaluate(std::string const &expression) {
             }
 
             operandStack.push(result);
-        } else {
+        } else if (isdigit(token[0]) || (token[0] == '-' && isdigit(token[1]))) {
             double operand;
             std::istringstream(token) >> operand;
             operandStack.push(operand);
+        } else {
+            std::cerr << "Error: Invalid token " << token << std::endl;
+            return 0.0;
         }
     }
 
