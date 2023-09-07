@@ -6,18 +6,18 @@
 #    By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 13:58:32 by pbeheyt           #+#    #+#              #
-#    Updated: 2023/09/06 19:42:52 by pbeheyt          ###   ########.fr        #
+#    Updated: 2023/09/07 04:20:53 by pbeheyt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= PMergeMe
+NAME		= PmergeMe
 
 CXX			= c++
 
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g
 
 SRCS		= main.cpp \
-			PMergeMe.cpp
+			PmergeMe.cpp
 
 OBJS		= $(SRCS:%.cpp=obj/%.o)
 
