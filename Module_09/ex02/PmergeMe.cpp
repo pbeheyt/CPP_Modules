@@ -6,12 +6,43 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 03:01:16 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/07 04:14:20 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iterator>
+#include "PmergeMe.hpp"
+
+PmergeMe::PmergeMe(void) {};
+
+PmergeMe::PmergeMe(int ac, char **av) {
+	for (int i = 1; i < ac; ++i) {
+		int nb = atoi(av[i]);
+		
+		if (nb > 0) {
+			this->_l.push_back(nb);
+			this->_v.push_back(nb);
+		} else {
+			throw std::runtime_error("Error: Argument is not a positive integer");
+		}
+	}
+	execute();
+};
+
+PmergeMe::PmergeMe(PmergeMe const &rhs) {
+	*this = rhs;
+}
+
+PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
+	if (this != &rhs) {
+		this->_l = rhs._l;
+		this->_v = rhs._v;
+	}
+	return *this;
+}
+
+PmergeMe::~PmergeMe() {};
 
 template <typename T>
 void printContainer(T &container) {
@@ -75,4 +106,8 @@ void mergeInsertionSort(T &container) {
         container.clear();
         merge(container, left, right);
     }
+}
+
+void PmergeMe::execute(void) {
+	
 }

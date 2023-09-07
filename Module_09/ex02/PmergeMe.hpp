@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 02:57:38 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/07 04:09:58 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,30 @@
 #define _MODULE_09_EX02_PMERGEME_HPP_
 
 #include <iostream>
+#include <list>
 #include <vector>
 #include <algorithm>
 
-class PMergeMe {
+class PmergeMe {
 	public:
-	
+		PmergeMe(void);
+		PmergeMe(int ac, char **av);
+		PmergeMe(PmergeMe const &rhs);
+		PmergeMe &operator=(PmergeMe const &rhs);
+		~PmergeMe(void);
+		
+		template <typename T>
+		void printContainer(T &container);
+		template <typename T>
+		void insertionSort(T &container);
+		template <typename T>
+		void merge(T &container, T const &left, T const &right);
+		
+		void PmergeMe::execute(void);
+
+	private:
+		std::list<int>		_l;
+		std::vector<int>	_v;
 };
 
 #endif // _MODULE_09_EX02_PMERGEME_HPP_
