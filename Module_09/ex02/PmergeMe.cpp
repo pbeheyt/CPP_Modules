@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 04:44:59 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/07 21:53:29 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,14 @@
 PmergeMe::PmergeMe(void){};
 
 PmergeMe::PmergeMe(int ac, char **av) {
-	for (int i = 1; i < ac; ++i)
-	{
+	for (int i = 1; i < ac; ++i) {
 		int nb = atoi(av[i]);
 
-		if (nb > 0)
-		{
+		if (nb > 0) {
 			this->_l.push_back(nb);
 			this->_v.push_back(nb);
 		}
-		else
-		{
+		else {
 			throw std::runtime_error("Error: Argument is not a positive integer");
 		}
 	}
@@ -39,8 +36,7 @@ PmergeMe::PmergeMe(PmergeMe const &rhs) {
 }
 
 PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
-	if (this != &rhs)
-	{
+	if (this != &rhs) {
 		this->_l = rhs._l;
 		this->_v = rhs._v;
 	}
@@ -50,10 +46,8 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
 PmergeMe::~PmergeMe(){};
 
 template <typename T>
-void PmergeMe::printContainer(T &container)
-{
-	for (typename T::iterator it = container.begin(); it != container.end(); ++it)
-	{
+void PmergeMe::printContainer(T &container) {
+	for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
@@ -79,20 +73,15 @@ void PmergeMe::insertionSort(T &container) {
 }
 
 template <typename T>
-void PmergeMe::merge(T &container, T const &left, T const &right)
-{
+void PmergeMe::merge(T &container, T const &left, T const &right) {
 	typename T::const_iterator it = left.begin();
 	typename T::const_iterator jt = right.begin();
 
-	while (it != left.end() && jt != right.end())
-	{
-		if (*it < *jt)
-		{
+	while (it != left.end() && jt != right.end()) {
+		if (*it < *jt) {
 			container.push_back(*it);
 			it++;
-		}
-		else
-		{
+		} else {
 			container.push_back(*jt);
 			jt++;
 		}
@@ -103,8 +92,7 @@ void PmergeMe::merge(T &container, T const &left, T const &right)
 }
 
 template <typename T>
-void PmergeMe::mergeInsertionSort(T &container)
-{
+void PmergeMe::mergeInsertionSort(T &container) {
 	int threshold = 42;
 	int n = container.size();
 	if (n <= threshold) {
