@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 21:53:29 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/07 23:58:46 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,23 +93,33 @@ void PmergeMe::merge(T &container, T const &left, T const &right) {
 
 template <typename T>
 void PmergeMe::mergeInsertionSort(T &container) {
-	int threshold = 42;
+	int threshold = 10;
 	int n = container.size();
 	if (n <= threshold) {
 		insertionSort(container);
 	} else {
-		typename T::iterator middle = container.begin();
-		std::advance(middle, n / 2);
-
-		T left(container.begin(), middle);
-		T right(middle, container.end());
-
-		mergeInsertionSort(left);
-		mergeInsertionSort(right);
-
-		container.clear();
-		merge(container, left, right);
+		mergeSort(container);
 	}
+}
+
+template <typename T>
+void PmergeMe::mergeSort(T &container) {
+	int n = container.size();
+	if (n < 2) {
+		return;
+	}
+	
+	typename T::iterator middle = container.begin();
+	std::advance(middle, n / 2);
+
+	T left(container.begin(), middle);
+	T right(middle, container.end());
+
+	mergeSort(left);
+	mergeSort(right);
+
+	container.clear();
+	merge(container, left, right);
 }
 
 void PmergeMe::execute(void) {

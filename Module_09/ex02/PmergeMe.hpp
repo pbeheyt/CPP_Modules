@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 04:42:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/07 23:45:59 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class PmergeMe {
 		void merge(T &container, T const &left, T const &right);
 		template <typename T>
 		void mergeInsertionSort(T &container);
-		
+		template <typename T>
+		void mergeSort(T &container);
 		void execute(void);
 
 	private:
