@@ -6,20 +6,21 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 23:58:46 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 01:40:59 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iterator>
 #include "PmergeMe.hpp"
 
 PmergeMe::PmergeMe(void){};
 
 PmergeMe::PmergeMe(int ac, char **av) {
 	for (int i = 1; i < ac; ++i) {
+		if (!isStringAllDigits(av[i])) {
+			throw std::runtime_error("Error: Argument is not a positive integer");
+		}
+		
 		int nb = atoi(av[i]);
-
 		if (nb > 0) {
 			this->_l.push_back(nb);
 			this->_v.push_back(nb);
@@ -45,13 +46,7 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
 
 PmergeMe::~PmergeMe(){};
 
-template <typename T>
-void PmergeMe::printContainer(T &container) {
-	for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-}
+/* ************************************************************************** */
 
 template <typename T>
 void PmergeMe::insertionSort(T &container) {
@@ -70,6 +65,26 @@ void PmergeMe::insertionSort(T &container) {
         }
         *jt = value;
     }
+}
+
+template <typename T>
+void PmergeMe::mergeSort(T &container) {
+	int n = container.size();
+	if (n < 2) {
+		return;
+	}
+	
+	typename T::iterator middle = container.begin();
+	std::advance(middle, n / 2);
+
+	T left(container.begin(), middle);
+	T right(middle, container.end());
+
+	mergeSort(left);
+	mergeSort(right);
+
+	container.clear();
+	merge(container, left, right);
 }
 
 template <typename T>
@@ -103,23 +118,22 @@ void PmergeMe::mergeInsertionSort(T &container) {
 }
 
 template <typename T>
-void PmergeMe::mergeSort(T &container) {
-	int n = container.size();
-	if (n < 2) {
-		return;
+void PmergeMe::printContainer(T &container) {
+	for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
+		std::cout << *it << " ";
 	}
-	
-	typename T::iterator middle = container.begin();
-	std::advance(middle, n / 2);
+	std::cout << std::endl;
+}
 
-	T left(container.begin(), middle);
-	T right(middle, container.end());
+/* ************************************************************************** */
 
-	mergeSort(left);
-	mergeSort(right);
-
-	container.clear();
-	merge(container, left, right);
+bool PmergeMe::isStringAllDigits(std::string const &str) {
+    for (size_t i = 0; i < str.length(); ++i) {
+        if (!isdigit(str[i])) {
+            return false;
+        }
+    }
+    return true;
 }
 
 void PmergeMe::execute(void) {

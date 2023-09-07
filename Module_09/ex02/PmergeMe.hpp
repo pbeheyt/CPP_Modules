@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 23:45:59 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 01:41:03 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <list>
 #include <vector>
 #include <algorithm>
+#include <string>
+#include <iostream>
+#include <iterator>
 
 class PmergeMe {
 	public:
@@ -25,18 +28,21 @@ class PmergeMe {
 		PmergeMe &operator=(PmergeMe const &rhs);
 		~PmergeMe(void);
 		
-		template <typename T>
-		void printContainer(T &container);
+		
 		template <typename T>
 		void insertionSort(T &container);
+		template <typename T>
+		void mergeSort(T &container);
 		template <typename T>
 		void merge(T &container, T const &left, T const &right);
 		template <typename T>
 		void mergeInsertionSort(T &container);
 		template <typename T>
-		void mergeSort(T &container);
+		void printContainer(T &container);
+		
+		bool isStringAllDigits(std::string const &str);
 		void execute(void);
-
+	
 	private:
 		std::list<int>		_l;
 		std::vector<int>	_v;
