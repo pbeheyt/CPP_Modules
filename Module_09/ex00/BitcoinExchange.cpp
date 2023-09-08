@@ -6,12 +6,11 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:17:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/01 03:34:09 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 04:59:17 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <iostream>
 
 BitcoinExchange::BitcoinExchange(const std::string &filePath) {
 	
@@ -23,7 +22,7 @@ BitcoinExchange::BitcoinExchange(const std::string &filePath) {
 	std::string line;
 	std::getline(ifs, line);
 	if (line != "date,exchange_rate") {
-		throw std::runtime_error("Invalid header");
+		throw std::runtime_error("invalid header");
 	}
 	
 	while (getline(ifs, line)) {

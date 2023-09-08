@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:19:25 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/01 03:34:01 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 04:59:02 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <fstream>
 #include <sstream>
 #include <map>
+#include <iostream>
 
 class BitcoinExchange {
 	public:
@@ -27,7 +28,7 @@ class BitcoinExchange {
 		bool	IsValidValue(double const &value) const;
 		bool	IsValidDate(std::string &date) const;
 		bool	GetExchangeRate(std::string const &date);
-		void	Execute(std::string const	&filePath);
+		void	Execute(std::string const &filePath);
 	
 	private:
 		std::map<std::string, double>	_exchangeRates;
