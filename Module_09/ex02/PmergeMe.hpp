@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 04:48:42 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 04:54:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class PmergeMe {
 		template <typename T>
 		void mergeInsertionSort(T &container);
 		template <typename T>
-		void printContainer(T &container);
+		void printContainer(T const &container);
 		
 		bool isStringAllDigits(std::string const &str);
 		void execute(void);

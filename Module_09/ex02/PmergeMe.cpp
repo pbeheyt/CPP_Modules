@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 04:48:55 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 04:54:45 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 PmergeMe::PmergeMe(void) {};
 
-PmergeMe::PmergeMe(int ac, char **av) {
+PmergeMe::PmergeMe(int ac, char **av)
+	: _d(), _v() 
+{
 	for (int i = 1; i < ac; ++i) {
 		if (!isStringAllDigits(av[i])) {
 			throw std::runtime_error("Error: Argument is not a positive number");
@@ -119,7 +121,7 @@ void PmergeMe::mergeInsertionSort(T &container) {
 }
 
 template <typename T>
-void PmergeMe::printContainer(T &container) {
+void PmergeMe::printContainer(T const &container) {
 	for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
 		std::cout << *it << " ";
 	}
