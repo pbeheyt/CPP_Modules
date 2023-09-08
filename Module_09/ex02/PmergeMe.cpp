@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 02:43:56 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 04:05:16 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@ PmergeMe::PmergeMe(void) {};
 PmergeMe::PmergeMe(int ac, char **av) {
 	for (int i = 1; i < ac; ++i) {
 		if (!isStringAllDigits(av[i])) {
-			throw std::runtime_error("Error: Argument is not a positive integer");
+			throw std::runtime_error("Error: Argument is not a number");
 		}
 		
 		int nb = atoi(av[i]);
 		if (nb > 0) {
 			this->_d.push_back(nb);
 			this->_v.push_back(nb);
-		}
-		else {
+		} else {
 			throw std::runtime_error("Error: Argument is not a positive integer");
 		}
 	}
@@ -44,14 +43,13 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
 	return *this;
 }
 
-PmergeMe::~PmergeMe(){};
+PmergeMe::~PmergeMe(void) {};
 
 /* ************************************************************************** */
 
 template <typename T>
 void PmergeMe::insertionSort(T &container) {
     int size = container.size();
-
     if (size <= 1)
         return;
 
@@ -59,7 +57,6 @@ void PmergeMe::insertionSort(T &container) {
         typename T::value_type value = container[i];
         int j = i;
 
-        // Move elements until the correct position for 'value' is found
         while (j > 0 && container[j - 1] > value) {
             container[j] = container[j - 1];
             --j;
