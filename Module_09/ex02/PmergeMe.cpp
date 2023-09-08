@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 04:05:16 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 04:48:55 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ PmergeMe::PmergeMe(void) {};
 PmergeMe::PmergeMe(int ac, char **av) {
 	for (int i = 1; i < ac; ++i) {
 		if (!isStringAllDigits(av[i])) {
-			throw std::runtime_error("Error: Argument is not a number");
+			throw std::runtime_error("Error: Argument is not a positive number");
 		}
 		
-		int nb = atoi(av[i]);
-		if (nb > 0) {
-			this->_d.push_back(nb);
-			this->_v.push_back(nb);
-		} else {
+ 		long long nb = atoll(av[i]);
+        if (nb > 0 && nb <= std::numeric_limits<int>::max()) {
+            int intNb = static_cast<int>(nb);
+            this->_d.push_back(intNb);
+            this->_v.push_back(intNb);
+        } else {
 			throw std::runtime_error("Error: Argument is not a positive integer");
 		}
 	}
