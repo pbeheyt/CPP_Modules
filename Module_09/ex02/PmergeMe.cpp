@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 04:54:45 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 23:43:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 PmergeMe::PmergeMe(void) {};
 
 PmergeMe::PmergeMe(int ac, char **av)
-	: _d(), _v() 
-{
+	: _d(), _v() {
 	for (int i = 1; i < ac; ++i) {
 		if (!isStringAllDigits(av[i])) {
 			throw std::runtime_error("Error: Argument is not a positive number");
@@ -122,7 +121,7 @@ void PmergeMe::mergeInsertionSort(T &container) {
 
 template <typename T>
 void PmergeMe::printContainer(T const &container) {
-	for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
+	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
@@ -154,6 +153,6 @@ void PmergeMe::execute(void) {
 	double timeDeque = static_cast<double>(endTimeDeque - startTimeDeque) / CLOCKS_PER_SEC * 1000000;
 	double timeVector = static_cast<double>(endTimeVector - startTimeVector) / CLOCKS_PER_SEC * 1000000;
 
-	std::cout << "Time to process a range of " << this->_v.size() << " elements with std::deque : " << timeDeque << " us" << std::endl;
+	std::cout << "Time to process a range of " << this->_d.size() << " elements with std::deque : " << timeDeque << " us" << std::endl;
 	std::cout << "Time to process a range of " << this->_v.size() << " elements with std::vector : " << timeVector << " us" << std::endl;
 }

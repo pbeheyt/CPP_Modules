@@ -6,12 +6,11 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:17 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/07 23:49:39 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 23:40:44 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-#include <iostream>
 
 int main(int ac, char **av) {
     if (ac < 2) {

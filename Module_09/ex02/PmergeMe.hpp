@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 04:54:51 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 23:35:51 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class PmergeMe {
 		PmergeMe(PmergeMe const &rhs);
 		PmergeMe &operator=(PmergeMe const &rhs);
 		~PmergeMe(void);
-		
 		
 		template <typename T>
 		void insertionSort(T &container);
