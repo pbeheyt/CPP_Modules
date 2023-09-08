@@ -6,13 +6,13 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 01:40:59 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 02:43:56 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(void){};
+PmergeMe::PmergeMe(void) {};
 
 PmergeMe::PmergeMe(int ac, char **av) {
 	for (int i = 1; i < ac; ++i) {
@@ -22,7 +22,7 @@ PmergeMe::PmergeMe(int ac, char **av) {
 		
 		int nb = atoi(av[i]);
 		if (nb > 0) {
-			this->_l.push_back(nb);
+			this->_d.push_back(nb);
 			this->_v.push_back(nb);
 		}
 		else {
@@ -38,7 +38,7 @@ PmergeMe::PmergeMe(PmergeMe const &rhs) {
 
 PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
 	if (this != &rhs) {
-		this->_l = rhs._l;
+		this->_d = rhs._d;
 		this->_v = rhs._v;
 	}
 	return *this;
@@ -50,22 +50,25 @@ PmergeMe::~PmergeMe(){};
 
 template <typename T>
 void PmergeMe::insertionSort(T &container) {
-    for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
-        typename T::value_type value = *it;
-        typename T::iterator jt = it;
-        if (jt == container.begin()) {
-            continue;
+    int size = container.size();
+
+    if (size <= 1)
+        return;
+
+    for (int i = 1; i < size; ++i) {
+        typename T::value_type value = container[i];
+        int j = i;
+
+        // Move elements until the correct position for 'value' is found
+        while (j > 0 && container[j - 1] > value) {
+            container[j] = container[j - 1];
+            --j;
         }
-        typename T::iterator prev = jt;
-        --prev;
-        while (*prev > value) {
-            *jt = *prev;
-            --jt;
-            --prev;
-        }
-        *jt = value;
+
+        container[j] = value;
     }
 }
+
 
 template <typename T>
 void PmergeMe::mergeSort(T &container) {
@@ -140,17 +143,17 @@ void PmergeMe::execute(void) {
 	std::cout << "Before: ";
 	printContainer(this->_v);
 	std::cout << "After: ";
-	clock_t startTimeList = clock();
-	mergeInsertionSort(this->_l);
-	clock_t endTimeList = clock();
+	clock_t startTimeDeque = clock();
+	mergeInsertionSort(this->_d);
+	clock_t endTimeDeque = clock();
 	clock_t startTimeVector = clock();
 	mergeInsertionSort(this->_v);
 	clock_t endTimeVector = clock();
 	printContainer(this->_v);
 
-	double timeList = static_cast<double>(endTimeList - startTimeList) / CLOCKS_PER_SEC * 1000000;
+	double timeDeque = static_cast<double>(endTimeDeque - startTimeDeque) / CLOCKS_PER_SEC * 1000000;
 	double timeVector = static_cast<double>(endTimeVector - startTimeVector) / CLOCKS_PER_SEC * 1000000;
 
-	std::cout << "Time to process a range of " << this->_v.size() << " elements with std::list : " << timeList << " us" << std::endl;
+	std::cout << "Time to process a range of " << this->_v.size() << " elements with std::deque : " << timeDeque << " us" << std::endl;
 	std::cout << "Time to process a range of " << this->_v.size() << " elements with std::vector : " << timeVector << " us" << std::endl;
 }

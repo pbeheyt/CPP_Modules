@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:15 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 01:41:03 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/08 02:16:59 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _MODULE_09_EX02_PMERGEME_HPP_
 
 #include <list>
+#include <deque>
 #include <vector>
 #include <algorithm>
 #include <string>
@@ -44,7 +45,7 @@ class PmergeMe {
 		void execute(void);
 	
 	private:
-		std::list<int>		_l;
+		std::deque<int>		_d;
 		std::vector<int>	_v;
 };
 
