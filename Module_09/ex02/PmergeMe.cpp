@@ -6,19 +6,19 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:11 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 23:43:51 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/13 01:51:38 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(void) {};
+PmergeMe::PmergeMe(void) {}
 
 PmergeMe::PmergeMe(int ac, char **av)
 	: _d(), _v() {
 	for (int i = 1; i < ac; ++i) {
 		if (!isStringAllDigits(av[i])) {
-			throw std::runtime_error("Error: Argument is not a positive number");
+			throw std::runtime_error("Argument is not a positive number");
 		}
 		
  		long long nb = atoll(av[i]);
@@ -27,7 +27,7 @@ PmergeMe::PmergeMe(int ac, char **av)
             this->_d.push_back(intNb);
             this->_v.push_back(intNb);
         } else {
-			throw std::runtime_error("Error: Argument is not a positive integer");
+			throw std::runtime_error("Argument is not a positive integer");
 		}
 	}
 	execute();
@@ -45,7 +45,7 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
 	return *this;
 }
 
-PmergeMe::~PmergeMe(void) {};
+PmergeMe::~PmergeMe(void) {}
 
 /* ************************************************************************** */
 
@@ -130,8 +130,8 @@ void PmergeMe::printContainer(T const &container) {
 /* ************************************************************************** */
 
 bool PmergeMe::isStringAllDigits(std::string const &str) {
-    for (size_t i = 0; i < str.length(); ++i) {
-        if (!isdigit(str[i])) {
+    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+        if (!isdigit(*it)) {
             return false;
         }
     }

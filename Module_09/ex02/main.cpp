@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:42:17 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 23:40:44 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/13 01:44:54 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char **av) {
 		try {
 			PmergeMe pm(ac, av);
 		} catch (std::exception const &e) {
-			std::cerr << e.what() << std::endl;
+			std::cerr << "Error: " << e.what() << std::endl;
 		}
 	}
 	
