@@ -6,13 +6,28 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 03:39:45 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/13 01:31:03 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/13 01:40:57 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-bool RPNCalculator::isStringAllDigits(std::string const &str) {
+RPN::RPN(void) {}
+
+RPN::RPN(RPN const &rhs) {
+	*this = rhs;
+}
+
+RPN	&RPN::operator=(RPN const &rhs) {
+	(void)rhs;
+	return *this;
+}
+
+RPN::~RPN(void) {}
+
+/* ************************************************************************** */
+
+bool RPN::isStringAllDigits(std::string const &str) {
     for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
         if (!isdigit(*it)) {
             return false;
@@ -21,7 +36,7 @@ bool RPNCalculator::isStringAllDigits(std::string const &str) {
     return true;
 }
 
-double RPNCalculator::evaluate(std::string const &expression) {
+double RPN::evaluate(std::string const &expression) {
  std::stack<double> operandStack;
 	std::istringstream iss(expression);
 
