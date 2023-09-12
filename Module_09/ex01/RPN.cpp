@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 03:39:45 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/12 23:57:47 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/13 01:31:03 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ double RPNCalculator::evaluate(std::string const &expression) {
 	while (iss >> token) {
 		if (token == "+" || token == "-" || token == "*" || token == "/") {
 			if (operandStack.size() < 2) {
-				throw std::invalid_argument("Error: Insufficient operands for operator " + token);
+				throw std::invalid_argument("Insufficient operands for operator " + token);
 			}
 
 			double operand2 = operandStack.top();
@@ -48,7 +48,7 @@ double RPNCalculator::evaluate(std::string const &expression) {
 				if (operand2 != 0.0) {
 					result = operand1 / operand2;
 				} else {
-					throw std::runtime_error("Error: Division by zero");
+					throw std::runtime_error("Division by zero");
 				}
 			}
 
@@ -56,9 +56,14 @@ double RPNCalculator::evaluate(std::string const &expression) {
 		} else if (isStringAllDigits(token)) {
 			double operand;
 			std::istringstream(token) >> operand;
+			
+			if (operand >= 10) {
+                throw std::invalid_argument("Number " + token + " is greater than or equal to 10");
+			}
 			operandStack.push(operand);
+			
 		} else {
-			throw std::invalid_argument("Error: Invalid token [ " + token + " ]");
+			throw std::invalid_argument("Invalid token [ " + token + " ]");
 		}
 	}
 
