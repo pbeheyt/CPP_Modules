@@ -6,7 +6,7 @@
 /*   By: pbeheyt <pbeheyt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 04:17:48 by pbeheyt           #+#    #+#             */
-/*   Updated: 2023/09/08 04:59:17 by pbeheyt          ###   ########.fr       */
+/*   Updated: 2023/09/13 03:37:36 by pbeheyt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ BitcoinExchange::BitcoinExchange(const std::string &filePath) {
 
 		std::getline(iss, date, ',');
 		iss >> rate;
-		if (!date.empty() && IsValidDate(date)
-			&& iss && (iss.peek() == EOF || iss.peek() == '\n')) {
+		if (IsValidDate(date) && iss && (iss.peek() == '\n' || iss.peek() == EOF)) {
 			this->_exchangeRates[date] = rate;
 		} else {
 			std::cerr << "Error: format in database =>"  << date << std::endl;
 		}
 	}
+	
 	ifs.close();
 }
 
@@ -56,6 +56,8 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs) {
 
 BitcoinExchange::~BitcoinExchange() {};
 
+/* ************************************************************************** */
+
 bool	BitcoinExchange::IsValidValue(double const &value) const {
 	if (value < 0) {
 		std::cerr << "Error: not a positive number." << std::endl;
@@ -68,7 +70,10 @@ bool	BitcoinExchange::IsValidValue(double const &value) const {
 }
 
 bool	BitcoinExchange::IsValidDate(std::string &date) const {
-	 if (date.length() != 10)
+	if (date.empty())
+		return false; 
+	
+	if (date.length() != 10)
         return false;
 
     if (date[4] != '-' || date[7] != '-')
@@ -108,17 +113,17 @@ bool	BitcoinExchange::IsValidDate(std::string &date) const {
 bool	BitcoinExchange::GetExchangeRate(std::string const &date) {
 	std::map<std::string, double>::const_iterator it;
 	it = this->_exchangeRates.lower_bound(date);
-	if (it != _exchangeRates.end()) {
+	if (it != this->_exchangeRates.end()) {
 		this->_rate = it->second;
 		return true;
-	} else if (!_exchangeRates.empty()) {
+	} else if (!this->_exchangeRates.empty()) {
 		this->_rate = (--it)->second;
 		return true;
 	}
 	return false;
 }
 
-void	BitcoinExchange::Execute(std::string const	&filePath) {
+void	BitcoinExchange::Execute(std::string const &filePath) {
 	std::ifstream	ifs(filePath.c_str());
 	std::string		line;
 
@@ -152,6 +157,7 @@ void	BitcoinExchange::Execute(std::string const	&filePath) {
 			std::cerr << "Error: bad input => " << date << std::endl;
 			continue;
 		}
+		
 		std::cout << date << " => " << value << " = " << value * this->_rate << std::endl;
 	}
 }
